@@ -1,0 +1,145 @@
+<div style="height:432px;">
+
+    <a href="<%- page.protocol %><%- page.domain %>" class="logov2_1" rel="nofollow">Смотри кино онлайн</a>
+
+    <div class="searchv2_1">
+        <div class="searchv2_1_back">
+            <form method="get" name="searchform" action="<%- page.protocol %><%- page.domain %>/<%- page.urls.search %>/title">
+                <input id="story" class="searchv2_2" name="q" value="Введите ваш текст для поиска..." onblur="if(this.value=='') this.value='Введите ваш текст для поиска...';" onfocus="if(this.value=='Введите ваш текст для поиска...') this.value='';" type="text"/>
+                <input type="image" class="searchv2_3" src="/themes/tyrion/public/images/spacer.gif?1" alt="Space"/>
+            </form>
+        </div>
+    </div>
+
+    <div class="loginv2_1">
+
+        <div class="loginv2_2 continueViewingBlock" style="display: none;">
+            <p class="link">
+                <img src="/themes/tyrion/public/images/new/btn_trailer.png" style="margin: 5px 5px 0 0; width: 10px;" alt="Продолжить просмотр?">
+                <a href="#continueViewingMovie" id="continueViewing">
+                    Продолжить просмотр?
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="hmenuv2_1">
+        <a href="<%- page.protocol %><%- page.domain %>" class="btnHome" rel="nofollow"></a>
+        <ul>
+            <li>
+                <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>" rel="nofollow">Фильмы</a>
+            </li>
+
+            <li>
+                <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.mult %>" rel="nofollow">Мультфильмы</a>
+            </li>
+            <li>
+                <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.serial %>" rel="nofollow">Сериалы</a>
+            </li>
+            <li>
+                <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.anime %>" rel="nofollow">Аниме</a>
+            </li>
+            <li>
+                <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.tv %>" rel="nofollow">Передачи</a>
+            </li>
+            <li><a href="#">ТОП 500</a>
+                <ul>
+                    <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=kinopoisk-rating-up">По рейтингу КиноПоиск</a></li>
+                    <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=imdb-rating-up">По рейтингу IMDb</a></li>
+                    <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=kinopoisk-vote-up">По голосам КиноПоиск</a></li>
+                    <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=imdb-vote-up">По голосам IMDb</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <% if (page.social) { %>
+
+        <div class="socbox">
+            <span class="ftrsocbox_title">Мы в соц. сетях:</span>
+            <% if (page.social.vk) { %>
+            <a class="ftrsocbox_item soch-vk" href="<%- page.social.vk %>"></a>
+            <% } %>
+            <% if (page.social.facebook) { %>
+            <a class="ftrsocbox_item soch-fb" href="<%- page.social.facebook %>"></a>
+            <% } %>
+            <% if (page.social.twitter) { %>
+            <a class="ftrsocbox_item soch-od" href="<%- page.social.twitter %>"></a>
+            <% } %>
+            <% if (page.social.gplus) { %>
+            <a class="ftrsocbox_item soch-tw" href="<%- page.social.gplus %>"></a>
+            <% } %>
+        </div>
+
+        <% } %>
+
+    </div>
+
+    <% if (typeof slider == 'object' && slider.movies.length) { %>
+
+    <div class="bf_top_films">
+
+        <div class="bf_top_films_bl">
+            <div class="bf_top_films_bl_title_back bf_top_films_bl_title bf_top_films_bl_title_back_1">
+                <div class="bf_top_films_bl_title_back_ic bf_top_films_bl_title_back_ic_1"></div>
+                HD фильмы
+                <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>" class="bf_top_films_bl_li_more bf_top_films_bl_li_more_1" rel="nofollow">Показать еще</a>
+            </div>
+            <div class="bf_top_films_bl_li bf_top_films_bl_li_1">
+                <ul>
+
+                    <% slider.movies.slice(0,6).forEach(function (movie) { %>
+
+                    <li>
+                        <a href="<%- movie.url %>"><% if (movie.title_ru.length >= 35) { %><%- movie.title_ru.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%- movie.title_ru %> <%- movie.year %><% } %></a>
+                    </li>
+
+                    <% }); %>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="bf_top_films_bl">
+            <div class="bf_top_films_bl_title_back bf_top_films_bl_title bf_top_films_bl_title_back_2">
+                <div class="bf_top_films_bl_title_back_ic bf_top_films_bl_title_back_ic_2"></div>
+                Популярные
+                <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=imdb-vote-up" class="bf_top_films_bl_li_more bf_top_films_bl_li_more_2" rel="nofollow">Показать еще</a>
+            </div>
+            <div class="bf_top_films_bl_li bf_top_films_bl_li_2">
+                <ul class="bf_top_films_bl_li_2">
+                    <% slider.movies.slice(6,12).forEach(function (movie) { %>
+
+                    <li>
+                        <a href="<%- movie.url %>"><% if (movie.title_ru.length >= 35) { %><%- movie.title_ru.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%- movie.title_ru %> <%- movie.year %><% } %></a>
+                    </li>
+
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bf_top_films_bl bf_top_films_bl_last">
+            <div class="bf_top_films_bl_title_back bf_top_films_bl_title bf_top_films_bl_title_back_3">
+                <div class="bf_top_films_bl_title_back_ic bf_top_films_bl_title_back_ic_3"></div>
+                Новинки в кино
+                <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2016" class="bf_top_films_bl_li_more bf_top_films_bl_li_more_3" rel="nofollow">Показать еще</a>
+            </div>
+            <div class="bf_top_films_bl_li bf_top_films_bl_li_3">
+                <ul class="bf_top_films_bl_li_3">
+                    <% slider.movies.slice(12,18).forEach(function (movie) { %>
+
+                    <li>
+                        <a href="<%- movie.url %>"><% if (movie.title_ru.length >= 35) { %><%- movie.title_ru.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%- movie.title_ru %> <%- movie.year %><% } %></a>
+                    </li>
+
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <% } %>
+
+</div>

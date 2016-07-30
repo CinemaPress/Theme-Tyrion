@@ -1,0 +1,69 @@
+<div class="bl1">
+    <div class="bl2">
+        <div class="bloc_nav bloc_nav_nav">Навигация</div>
+        <div class="bl_nav">
+            <ul style="margin-bottom: 20px;">
+                <li><a href="<%- page.protocol %><%- page.domain %>">Главная страница</a></li>
+                <li class="sub new_films"><a rel="nofollow">Новинки фильмов</a>
+                    <ul class="sub_m">
+                        <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2016">Новинки фильмов 2016</a></li>
+                        <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2015">Новинки фильмов 2015</a></li>
+                        <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2014">Новинки фильмов 2014</a></li>
+                        <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2013">Новинки фильмов 2013</a></li>
+                        <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2012">Новинки фильмов 2012</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>">Все жанры</a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>">Все годы</a>
+                </li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>">Все страны</a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.actor %>">Все актеры</a></li>
+                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.director %>">Все режиссеры</a></li>
+            </ul>
+
+            <div class="clearfix"></div>
+
+            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.collection %>" class="bl_groups"></a>
+
+        </div>
+    </div>
+</div>
+
+<% if (typeof soon == 'object' && soon.movies.length) { %>
+
+<div class="bl1_1">
+    <div class="bl2">
+        <div class="bloc_nav bloc_nav_scoro">Скоро</div>
+        <div class="bloc2">
+            <div id="content2">
+                <ul id="slides2">
+
+                    <% soon.movies.forEach(function (movie) { %>
+
+                    <li>
+                        <span class="date_treler">
+                            <span class="title">
+                                <a href="<%- movie.url %>">
+                                    <%- movie.title_ru %>
+                                </a>
+                            </span>
+                            <br>
+                            <span>
+                                В прокате с <%- movie.premiere %>
+                            </span>
+                        </span>
+                        <a href="<%- movie.url %>">
+                            <img src="<%- movie.poster %>" alt="<%- movie.title_ru %>">
+                        </a>
+                    </li>
+
+                    <% }); %>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% } %>

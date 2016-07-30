@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ru">
+<head>
+
+    <% include includes/head.ejs %>
+
+</head>
+<body class="class_body">
+
+<div class="new_top_menu" id="new_top_menu">
+    <div class="line">
+        <a href="<%- page.protocol %><%- page.domain %>" rel="nofollow" class="logo"></a>
+        <div class="right">
+            <div class="search">
+                <form action="<%- page.protocol %><%- page.domain %>/<%- page.urls.search %>/title" name="searchform" method="get">
+                    <input type="text" class="search_inp" name="q" autocomplete="off" placeholder="Поиск на сайте..."/>
+                    <input type="submit" class="search_but" value="" rel="nofollow"/>
+                </form>
+            </div>
+            <div class="login">
+                <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2016" rel="nofollow" class="new_films"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="hv2_1">
+
+    <div class="brand_back"></div>
+    <div class="brand_back_wrap"></div>
+
+    <div id="hv2_2">
+
+        <div id="hv2_4">
+
+            <div id="wrapper">
+
+                <div id="header">
+
+                    <% include includes/header.ejs %>
+
+                </div>
+
+                <div id="container">
+
+                    <div class="con1 ">
+                        <div class="con2">
+                            <div class="con3">
+                                <div class="con4">
+                                    <div class="con5">
+
+                                        <div id="left">
+
+                                            <% include includes/left.ejs %>
+
+                                        </div>
+
+                                        <div id="center" class="aviable_cat">
+
+                                            <div class="bl_seo_txt_h bl_seo_txt_h_categ_sb">
+                                                <div class="bl_seo_txt_bl_2">
+                                                    <div class="tit_speedbar">
+                                                        <span id="cinemapress-speedbar">
+                                                            <span>
+                                                                <a href="<%- page.protocol %><%- page.domain %>" rel="nofollow">
+                                                                    Главная
+                                                                </a>
+                                                            </span>
+                                                            <span class="separ"></span>
+                                                            <span>
+                                                                <%- page.title %>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="cinemapress-content">
+
+                                                <div class="sh0">
+                                                    <div class="sh1">
+                                                        <div class="sh2">
+                                                            <h1>
+                                                                <%- page.title %>
+                                                            </h1>
+                                                        </div>
+                                                    </div>
+
+                                                    <% if (typeof categories == 'object' && categories.length) { %>
+
+                                                    <div class="sh14">
+
+                                                        <div class="stat_main">
+                                                            <div class="sta1"></div>
+
+                                                            <% categories.forEach(function (category) { %>
+
+                                                            <div class="statt">
+                                                                <a class="stat12" href="<%- category.url %>" target="_blank"><%- category.name %></a>
+                                                                <div class="stat22">
+                                                                    <div class="stat33">
+                                                                        <a href="<%- category.url %>" target="_blank">
+                                                                            <img src="<% if (category.image) { %> <%- category.image %> <% } else { %>https://st.kp.yandex.net/images/kadr/sm_2136182.jpg<% } %>" alt="<%- category.name %>">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <% }); %>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <% } %>
+
+                                                </div>
+
+
+                                            </div>
+
+                                            <% if (page.seo) { %>
+
+                                            <div class="bottom_descr">
+                                                <div class="bl_seo_txt bl_seo_txt_txt">
+                                                    <%- page.seo %>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+
+                                            <% } %>
+
+                                        </div>
+
+                                        <div id="right">
+
+                                            <% include includes/right.ejs %>
+
+                                        </div>
+
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="recentlyViewedBlock" style="margin: 25px; display: none;">
+
+                    <div>Вы надавно смотрели:</div>
+                    <div id="recentlyViewed"></div>
+
+                </div>
+
+                <div id="spacer"></div>
+
+            </div>
+
+            <div id="footer">
+
+                <% include includes/footer.ejs %>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ru">
+<head>
+
+    <% include includes/head.ejs %>
+
+</head>
+<body class="class_body">
+
+<div class="new_top_menu" id="new_top_menu">
+    <div class="line">
+        <a href="<%- page.protocol %><%- page.domain %>" rel="nofollow" class="logo"></a>
+        <div class="right">
+            <div class="search">
+                <form action="<%- page.protocol %><%- page.domain %>/<%- page.urls.search %>/title" name="searchform" method="get">
+                    <input type="text" class="search_inp" name="q" autocomplete="off" placeholder="Поиск на сайте..."/>
+                    <input type="submit" class="search_but" value="" rel="nofollow"/>
+                </form>
+            </div>
+            <div class="login">
+                <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2016" rel="nofollow" class="new_films"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="hv2_1">
+
+    <div class="brand_back"></div>
+    <div class="brand_back_wrap"></div>
+
+    <div id="hv2_2">
+
+        <div id="hv2_4">
+
+            <div id="wrapper">
+
+                <div id="header">
+
+                    <% include includes/header.ejs %>
+
+                </div>
+
+                <div id="container">
+
+                    <div class="con1 ">
+                        <div class="con2">
+                            <div class="con3">
+                                <div class="con4">
+                                    <div class="con5">
+
+                                        <div id="left">
+
+                                            <% include includes/left.ejs %>
+
+                                        </div>
+
+                                        <div id="center" class="aviable_cat">
+
+                                            <div class="bl_seo_txt_h bl_seo_txt_h_categ_sb">
+                                                <div class="bl_seo_txt_bl_2">
+                                                    <div class="tit_speedbar">
+                                                        <span id="cinemapress-speedbar">
+                                                            <span>
+                                                                <a href="<%- page.protocol %><%- page.domain %>" rel="nofollow">
+                                                                    Главная
+                                                                </a>
+                                                            </span>
+                                                            <span class="separ"></span>
+                                                            <span>
+                                                                <%- page.title %>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="cat_h1">
+                                                <h1>
+                                                    <%- page.title %>
+                                                </h1>
+                                            </div>
+
+                                            <% if (typeof top == 'object' && top.movies.length) { %>
+
+                                            <div class="boxcattopfilm">
+                                                <div class="titlecatfilm">
+                                                    <%- top.name %>
+                                                </div>
+                                                <div class="catfilmbestbox">
+
+                                                    <% top.movies.slice(0,8).forEach(function (movie) { %>
+
+                                                    <div class="catfilmbestbox_item">
+                                                        <a href="<%- movie.url %>" rel="nofollow">
+                                                            <img src="<%- movie.poster %>" alt="<%- movie.title_ru %> <%- movie.year %>" title="<%- movie.title_ru %> <%- movie.year %>"></a>
+                                                        <a href="<%- movie.url %>">
+                                                            <span>
+                                                                <%- movie.title_ru %> <%- movie.year %>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+
+                                                    <% }); %>
+
+                                                </div>
+                                            </div>
+
+                                            <% } %>
+
+                                            <div id="news_set_sort">
+
+                                                <span>Сортировать по:</span>
+
+                                                <p>
+                                                <% page.sorting.forEach(function (sort) { %>
+
+                                                <% if (sort.active) { %>
+
+                                                <a href="<%- sort.url %>"> <strong><%- sort.name %></strong> </a>
+
+                                                <% } else { %>
+
+                                                <a href="<%- sort.url %>">
+                                                    <%- sort.name %>
+                                                </a>
+
+                                                <% } %>
+
+                                                <% }); %>
+                                                </p>
+
+                                            </div>
+
+                                            <div id='cinemapress-content'>
+
+                                                <% if (typeof movies == 'object' && movies.length) { %>
+
+                                                <% movies.forEach(function (movie) { %>
+
+                                                <div class="sh0">
+
+                                                    <div class="sh1">
+                                                        <div class="sh2">
+                                                            <div class="sh17">
+                                                                <div class="sh18"><%- movie.year %></div>
+                                                            </div>
+                                                            <div class="sh3">
+                                                                <a href="<%- movie.url %>"><%- movie.title_ru %></a>
+                                                            </div>
+
+                                                            <div class="favboxsh"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="sh4">
+                                                        <div class="sh5">
+                                                            <div class="sh6">
+
+                                                                <div class="sh9">Релиз: <%- movie.premiere %></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="sh15">
+
+                                                        <div class="postershortbox">
+                                                            <div class="postershort">
+                                                                <a href="<%- movie.url %>">
+                                                                    <img src="<%- movie.poster %>" alt="<%- movie.title_ru %> <%- movie.year %>" title="<%- movie.title_ru %> <%- movie.year %>">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+
+                                                        <ul class="shortinfo">
+                                                            <% if (movie.year_url) { %>
+                                                            <li><b>Год выпуска:</b> <%- movie.year_url %></li>
+                                                            <% } %>
+                                                            <% if (movie.countries_url) { %>
+                                                            <li><b>Страна:</b> <%- movie.countries_url %></li>
+                                                            <% } %>
+                                                            <% if (movie.genres_url) { %>
+                                                            <li><b>Жанр:</b> <%- movie.genres_url %></li>
+
+                                                            <% } %>
+                                                            <% if (movie.directors_url) { %>
+                                                            <li><b>Режиссер:</b> <%- movie.directors_url %></li>
+                                                            <% } %>
+                                                            <% if (movie.actors_url) { %>
+                                                            <li><b>В ролях:</b> <%- movie.actors_url %></li>
+                                                            <% } %>
+                                                        </ul>
+
+                                                        <% if (movie.description) { %>
+                                                        <div class="shortdisc" style="margin-top: 20px; text-align: justify;">
+                                                            <div style="display:inline;">
+                                                                <%- movie.description.substr(0, 200) %>...
+                                                            </div>
+                                                        </div>
+                                                        <% } %>
+
+                                                    </div>
+
+                                                    <div class="sh11">
+                                                        <div class="sh10">
+                                                            <span>
+                                                                <span class="ratig-layer">
+                                                                    <span style="float:left;" class="rat">
+                                                                        <%- movie.rating %>%
+                                                                    </span>
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="bf_fs_see">
+                                                            <a href="<%- movie.url %>" rel="nofollow">Смотреть фильм</a>
+                                                        </div>
+
+                                                        <div class="sh13">
+                                                            <span class="item_first">Рейтинг КП:
+                                                                <span class="num"><%- movie.kp_rating/10 %></span>
+                                                            </span>
+                                                            <span class="item">Рейтинг IMDb:
+                                                                <span class="num"><%- movie.imdb_rating/10 %></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <% }); %>
+
+                                                <% } %>
+
+                                                <div class="pagination">
+                                                    <% if (page.pagination.prev.length) { %>
+                                                    <% page.pagination.prev.slice(-3).forEach(function (prev) { %>
+                                                    <a href="<%- prev.link %>" rel="nofollow">
+                                                        <%- prev.number %>
+                                                    </a>
+                                                    <% }); %>
+                                                    <span class="nav_ext">...</span>
+                                                    <% } %>
+                                                    <span><%- page.pagination.current %></span>
+                                                    <% if (page.pagination.next.length) { %>
+                                                    <span class="nav_ext">...</span>
+                                                    <% page.pagination.next.slice(0,3).forEach(function (next) { %>
+                                                    <a href="<%- next.link %>" rel="nofollow">
+                                                        <%- next.number %>
+                                                    </a>
+                                                    <% }); %>
+                                                    <% } %>
+                                                </div>
+
+                                            </div>
+
+                                            <% if (page.seo) { %>
+
+                                            <div class="bottom_descr">
+                                                <div class="bl_seo_txt bl_seo_txt_txt">
+                                                    <%- page.seo %>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+
+                                            <% } %>
+
+                                        </div>
+
+                                        <div id="right">
+
+                                            <% include includes/right.ejs %>
+
+                                        </div>
+
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="recentlyViewedBlock" style="margin: 25px; display: none;">
+
+                    <div>Вы надавно смотрели:</div>
+                    <div id="recentlyViewed"></div>
+
+                </div>
+
+                <div id="spacer"></div>
+
+            </div>
+
+            <div id="footer">
+
+                <% include includes/footer.ejs %>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ru">
+<head>
+
+    <% include includes/head.ejs %>
+
+</head>
+<body class="class_body">
+
+<div class="new_top_menu" id="new_top_menu">
+    <div class="line">
+        <a href="<%- page.protocol %><%- page.domain %>" rel="nofollow" class="logo"></a>
+        <div class="right">
+            <div class="search">
+                <form action="<%- page.protocol %><%- page.domain %>/<%- page.urls.search %>/title" name="searchform" method="get">
+                    <input type="text" class="search_inp" name="q" autocomplete="off" placeholder="Поиск на сайте..."/>
+                    <input type="submit" class="search_but" value="" rel="nofollow"/>
+                </form>
+            </div>
+            <div class="login">
+                <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2016" rel="nofollow" class="new_films"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="hv2_1">
+
+    <div class="brand_back"></div>
+    <div class="brand_back_wrap"></div>
+
+    <div id="hv2_2">
+
+        <div id="hv2_4">
+
+            <div id="wrapper">
+
+                <div id="header">
+
+                    <% include includes/header.ejs %>
+
+                </div>
+
+                <div id="container">
+
+                    <div class="con1 ">
+                        <div class="con2">
+                            <div class="con3">
+                                <div class="con4">
+                                    <div class="con5">
+
+                                        <div id="left">
+
+                                            <% include includes/left.ejs %>
+
+                                        </div>
+
+                                        <div id="center" class="aviable_showfull">
+
+                                            <div class="bl_seo_txt_h bl_seo_txt_h_categ_sb">
+                                                <div class="bl_seo_txt_bl_2">
+                                                    <div class="tit_speedbar">
+                                                        <span id="cinemapress-speedbar">
+                                                            <span>
+                                                                <a href="<%- page.protocol %><%- page.domain %>" rel="nofollow">
+                                                                    Главная
+                                                                </a>
+                                                            </span>
+                                                            <span class="separ"></span>
+                                                            <span>
+                                                                <%- movie.genre_url %>
+                                                            </span>
+                                                            <span class="separ"></span>
+                                                            <span>
+                                                                <a href="<%- movie.url %>">
+                                                                    <%- movie.title_ru %>
+                                                                </a>    
+                                                            </span>
+                                                            <span class="separ"></span>
+                                                            <span>
+                                                                Трекер
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id='cinemapress-content'>
+
+                                                <div class="sh0">
+                                                    <div class="sh1">
+                                                        <div class="sh2">
+
+                                                            <div class="sh17">
+                                                                <div class="sh18">
+                                                                    <%- movie.year %>
+                                                                </div>
+                                                            </div>
+
+                                                            <h1>
+                                                                <%- movie.title_ru %> скачать torrent
+                                                            </h1>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="sh15">
+
+                                                        <div class="clearfix"></div>
+
+                                                        <div style="clear:both"></div>
+
+                                                        <h2>Скачать <%- movie.title_ru %> <%- movie.year %> бесплатно torrent</h2>
+
+                                                        <br/>
+                                                        <div class="section">
+                                                            <ul class="tabz">
+                                                                <li>
+                                                                    <a href="<%- movie.url %>/<%- page.urls.movies.online %>">
+                                                                        Онлайн
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">
+                                                                        Трейлер
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                            <div>
+                                                                <div class="box visible" style="width: 100%; height: 370px;">
+                                                                    <%- page.player %>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="line_rating_n">
+                                                                <div class="social-likes" data-counters="no">
+                                                                    <div class="facebook" title="Поделиться ссылкой на Фейсбуке"></div>
+                                                                    <div class="twitter" title="Поделиться ссылкой в Твиттере"></div>
+                                                                    <div class="vkontakte" title="Поделиться ссылкой во Вконтакте"></div>
+                                                                    <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках"></div>
+                                                                    <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе"></div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div style="clear:both;"></div>
+
+                                                            <% if (movie.pictures.length) { %>
+
+                                                            <div style="margin: 10px auto; text-align: center;">
+
+                                                                <% movie.pictures.forEach(function (picture) { %>
+                                                                <a href="<%- movie.url %>/<%- page.urls.movies.picture %>"><img src="<%- picture.picture_min %>" alt="<%- movie.title_ru %> <%- movie.year %> кадры" title="<%- movie.title_ru %>"></a>
+                                                                <% }); %>
+
+                                                            </div>
+
+                                                            <% } %>
+
+                                                            <div style="clear:both;"></div>
+
+                                                        </div>
+
+                                                        <div class="clearfix"></div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
+
+                                                <% if (movies[type].length) { movies[type].forEach(function (category) {  %>
+
+                                                <div class="relatnews_tit">
+                                                    <div class="titlereln">
+                                                        <h4>
+                                                            <%- category.name %>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+
+                                                <div class="relatnews">
+                                                    <div class="slider1">
+
+                                                        <% if (category.movies.length) { category.movies.forEach(function (movie) {  %>
+
+                                                        <div class="slide">
+                                                            <div class="imgbox">
+                                                                <div class="img">
+                                                                    <a href="<%- movie.url %>" rel="nofollow">
+                                                                        <img src="<%- movie.poster %>" alt="<%- movie.title_ru %> <%- movie.year %>"/>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="reltexta">
+                                                                    <a href="<%- movie.url %>"><%- movie.title_ru %> <%- movie.year %></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <% }); } %>
+
+                                                    </div>
+                                                </div>
+
+                                                <% }); } %>
+
+                                                <% } } } %>
+
+                                            </div>
+
+                                            <div class="clearfix"></div>
+
+                                            <% if (page.comments) { %>
+                                            <%- page.comments %>
+                                            <% } %>
+
+                                            <div class="clearfix"></div>
+
+                                            <% if (page.seo) { %>
+
+                                            <div class="bottom_descr">
+                                                <div class="bl_seo_txt bl_seo_txt_txt">
+                                                    <%- page.seo %>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+
+                                            <% } %>
+
+                                        </div>
+
+                                        <div id="right">
+
+                                            <% include includes/right.ejs %>
+
+                                        </div>
+
+                                        <div class="clear"></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="recentlyViewedBlock" style="margin: 25px; display: none;">
+
+                    <div>Вы надавно смотрели:</div>
+                    <div id="recentlyViewed"></div>
+
+                </div>
+
+                <div id="spacer"></div>
+
+            </div>
+
+            <div id="footer">
+
+                <% include includes/footer.ejs %>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
