@@ -102,7 +102,7 @@
                                                                 <div class="sh18"><%- movie.year %></div>
                                                             </div>
                                                             <div class="sh3">
-                                                                <a href="<%- movie.url %>"><%- movie.title_ru %></a>
+                                                                <a href="<%- movie.url %>"><%- movie.title_ru %> <% if (movie.season && movie.episode) { %><%- movie.season %> сезон <%- movie.episode %> серия <% if (movie.translate) { %><%- movie.translate %><% } %><% } %></a>
                                                             </div>
 
                                                             <div class="favboxsh"></div>
