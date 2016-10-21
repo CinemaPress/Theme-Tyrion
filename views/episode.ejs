@@ -78,7 +78,7 @@
                                                             </span>
                                                             <span class="separ"></span>
                                                             <span>
-                                                                Предпросмотр
+                                                                Серия онлайн
                                                             </span>
                                                         </span>
                                                     </div>
@@ -98,7 +98,7 @@
                                                             </div>
 
                                                             <h1>
-                                                                <%- movie.title_ru %> смотреть трейлер
+                                                                <%- page.title %>
                                                             </h1>
 
                                                         </div>
@@ -125,18 +125,18 @@
                                                             <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                                                         </div>
 
-                                                        <h2>Трейлер <%- movie.title_ru %> <%- movie.year %> на русском языке</h2>
+                                                        <h2>Смотреть <%- movie.title_ru %> <%- movie.year %> бесплатно</h2>
 
                                                         <br/>
                                                         <div class="section">
                                                             <ul class="tabz">
-                                                                <li>
-                                                                    <a href="<%- movie.url %>/<%- page.urls.movies.online %>">
-                                                                        Онлайн
-                                                                    </a>
-                                                                </li>
                                                                 <li class="current">
-                                                                    Трейлер
+                                                                    Онлайн
+                                                                </li>
+                                                                <li>
+                                                                    <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">
+                                                                        Трейлер
+                                                                    </a>
                                                                 </li>
                                                             </ul>
                                                             <div>
@@ -146,6 +146,11 @@
                                                             </div>
 
                                                             <div class="line_rating_n">
+                                                                <div class="watchLaterBlock" style="display: none;">
+                                                                    <a href="javascript:void(0)" id="watchLater" class="watchlater">
+                                                                        Досмотреть позже
+                                                                    </a>
+                                                                </div>
                                                                 <div class="social-likes" data-counters="no">
                                                                     <div class="facebook" title="Поделиться ссылкой на Фейсбуке"></div>
                                                                     <div class="twitter" title="Поделиться ссылкой в Твиттере"></div>
@@ -238,17 +243,6 @@
                                             <% } %>
 
                                             <div class="clearfix"></div>
-
-                                            <% if (page.seo) { %>
-
-                                            <div class="bottom_descr">
-                                                <div class="bl_seo_txt bl_seo_txt_txt">
-                                                    <%- page.seo %>
-                                                </div>
-                                                <div class="clear"></div>
-                                            </div>
-
-                                            <% } %>
 
                                         </div>
 

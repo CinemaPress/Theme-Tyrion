@@ -167,6 +167,11 @@
 
                                                         <div style="clear:both"></div>
 
+                                                        <div class="episodesListBlock" style="display: none; margin: 10px auto">
+                                                            <h3><%- movie.title %> новые серии</h3>
+                                                            <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
+                                                        </div>
+
                                                         <h2>Смотреть <%- movie.title_ru %> <%- movie.year %> онлайн в хорошем качестве</h2>
 
                                                         <br/>
@@ -235,6 +240,16 @@
 
                                                         <div class="clearfix"></div>
 
+                                                        <% if (page.seo) { %>
+
+                                                        <div class="fulldisc">
+                                                            <div style="display:inline;">
+                                                                <%- page.seo %>
+                                                            </div>
+                                                        </div>
+
+                                                        <% } %>
+
                                                     </div>
 
                                                 </div>
@@ -287,17 +302,6 @@
                                             <% } %>
 
                                             <div class="clearfix"></div>
-
-                                            <% if (page.seo) { %>
-
-                                            <div class="bottom_descr">
-                                                <div class="bl_seo_txt bl_seo_txt_txt">
-                                                    <%- page.seo %>
-                                                </div>
-                                                <div class="clear"></div>
-                                            </div>
-
-                                            <% } %>
 
                                         </div>
 
