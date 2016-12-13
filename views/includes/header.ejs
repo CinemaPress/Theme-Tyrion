@@ -91,7 +91,7 @@
                     <% slider.movies.slice(0,6).forEach(function (movie) { %>
 
                     <li>
-                        <a href="<%- movie.url %>"><% if (movie.title_ru.length >= 35) { %><%- movie.title_ru.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%- movie.title_ru %> <%- movie.year %><% } %></a>
+                        <a href="<%- movie.url %>"><% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%- movie.title %> <%- movie.year %><% } %></a>
                     </li>
 
                     <% }); %>
@@ -111,7 +111,7 @@
                     <% slider.movies.slice(6,12).forEach(function (movie) { %>
 
                     <li>
-                        <a href="<%- movie.url %>"><% if (movie.title_ru.length >= 35) { %><%- movie.title_ru.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%- movie.title_ru %> <%- movie.year %><% } %></a>
+                        <a href="<%- movie.url %>"><% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%- movie.title %> <%- movie.year %><% } %></a>
                     </li>
 
                     <% }); %>
@@ -130,7 +130,7 @@
                     <% slider.movies.slice(12,18).forEach(function (movie) { %>
 
                     <li>
-                        <a href="<%- movie.url %>"><% if (movie.title_ru.length >= 35) { %><%- movie.title_ru.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%- movie.title_ru %> <%- movie.year %><% } %></a>
+                        <a href="<%- movie.url %>"><% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%- movie.title %> <%- movie.year %><% } %></a>
                     </li>
 
                     <% }); %>
