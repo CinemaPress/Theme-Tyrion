@@ -67,3 +67,11 @@
 </div>
 
 <% } %>
+
+<% if (typeof page.adv == 'object' && page.adv.left) { %>
+<div style="clear: both;"></div>
+<div style="text-align: center; margin: 10px auto">
+    <%- page.adv.left %>
+</div>
+<div style="clear: both;"></div>
+<% } %>
