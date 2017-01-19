@@ -1,15 +1,16 @@
-# Theme Tyrion
+# Шаблон «tyrion»
 
-![Шаблон «Tyrion» для CinemaPress ACMS](https://raw.githubusercontent.com/CinemaPress/Theme-Tyrion/master/screenshot.png "Шаблон «Tyrion» для CinemaPress ACMS")
+![Шаблон «tyrion» для CinemaPress ACMS](https://raw.githubusercontent.com/CinemaPress/Theme-Tyrion/master/screenshot.png "Шаблон «tyrion» для CinemaPress ACMS")
 
-:art: Шаблон «Tyrion» для CinemaPress ACMS
+:art: Шаблон «tyrion» для CinemaPress ACMS
 
-- <a href="http://Tyrion.CinemaPress.org/" target="_blank">Tyrion.CinemaPress.org</a>
+- [Tyrion.CinemaPress.org](http://Tyrion.CinemaPress.org/)
 
 ## Установка
-1. [Скачать архив](https://github.com/CinemaPress/Theme-Tyrion/archive/master.zip)
-2. Распаковать содержимое папки **/Theme-Tyrion-master** в папку **/themes/tyrion**
-3. Изменить название темы в админ-панели на **tyrion**
+1. Скачать архив с [GitHub](https://github.com/CinemaPress/Theme-Tyrion/archive/master.zip) или [GitLab](https://gitlab.com/CinemaPress/Theme-Tyrion/repository/archive.zip) или [BitBucket](https://bitbucket.org/cinemapress/theme-tyrion/get/master.zip) или [Coding](https://coding.net/u/CinemaPress/p/Theme-Tyrion/git/archive/master.zip)
+2. Распаковать архив и переименовать папку в **tyrion**
+3. Папку **tyrion** отправить на сервер в папку **themes**
+4. Изменить название темы в админ-панели на **tyrion**
 
 ## Установка через установщик тем CinemaPress ACMS
 ```
