@@ -2,7 +2,7 @@
     <div id="topvk_top"></div>
 </div>
 
-<% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+<% if (typeof page.adv === 'object' && page.adv.bottom) { %>
 <div style="clear: both;"></div>
 <div style="text-align: center; margin: 10px auto">
     <%- page.adv.bottom %>
@@ -16,23 +16,23 @@
         <div class="fmenuv2_1">
             <ul>
                 <li>
-                    <a href="<%- page.protocol %><%- page.domain %>" rel="nofollow">Главная</a>
+                    <a href="/">Главная</a>
                 </li>
                 <li>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.movie %>" rel="nofollow">Фильмы</a>
+                    <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>">Фильмы</a>
                 </li>
 
                 <li>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.mult %>" rel="nofollow">Мультфильмы</a>
+                    <a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>">Мультфильмы</a>
                 </li>
                 <li>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.serial %>" rel="nofollow">Сериалы</a>
+                    <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>">Сериалы</a>
                 </li>
                 <li>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.anime %>" rel="nofollow">Аниме</a>
+                    <a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>">Аниме</a>
                 </li>
                 <li>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.tv %>" rel="nofollow">Передачи</a>
+                    <a href="/<%- page.urls.type %>/<%- page.urls.types.tv %>">Передачи</a>
                 </li>
             </ul>
         </div>
@@ -40,10 +40,10 @@
     </div>
 </div>
 
-<div style="text-align:right; margin:20px">
-    &copy;&nbsp;2017&nbsp;<a href="https://cinemapress.org" target="_blank" style="color:#000">CinemaPress&nbsp;ACMS</a>
+<div style="text-align:right; margin:50px 20px 0 0;">
+    &copy;&nbsp;<%- new Date().getFullYear() %>&nbsp;<a href="https://cinemapress.org" target="_blank" style="color:#000">CinemaPress&nbsp;ACMS</a>
 </div>
-<div style="text-align:right; margin:20px">
+<div style="text-align:right; margin:30px 20px 0 0;">
     Для связи с администрацией: <%- page.email %>
 </div>
 

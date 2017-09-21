@@ -3,35 +3,35 @@
         <div class="bloc_nav bloc_nav_nav">Навигация</div>
         <div class="bl_nav">
             <ul style="margin-bottom: 20px;">
-                <li><a href="<%- page.protocol %><%- page.domain %>">Главная страница</a></li>
+                <li><a href="/">Главная страница</a></li>
                 <li class="sub new_films"><a rel="nofollow">Новинки фильмов</a>
                     <ul class="sub_m">
-                        <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2017">Новинки фильмов 2017</a></li>
-                        <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2016">Новинки фильмов 2016</a></li>
-                        <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2015">Новинки фильмов 2015</a></li>
-                        <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2014">Новинки фильмов 2014</a></li>
-                        <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2013">Новинки фильмов 2013</a></li>
-                        <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2012">Новинки фильмов 2012</a></li>
+                        <% page.urls.years.slice(0,6).forEach(function(year) { %>
+                        <li>
+                            <a href="<%- year.url %>">
+                                Новинки фильмов <%- year.title %>
+                            </a>
+                        </li>
+                        <% }); %>
                     </ul>
                 </li>
 
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>">Все жанры</a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>">Все годы</a>
-                </li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>">Все страны</a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.actor %>">Все актеры</a></li>
-                <li><a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.director %>">Все режиссеры</a></li>
+                <li><a href="/<%- page.urls.genre %>">Все жанры</a></li>
+                <li><a href="/<%- page.urls.year %>">Все годы</a></li>
+                <li><a href="/<%- page.urls.country %>">Все страны</a></li>
+                <li><a href="/<%- page.urls.actor %>">Все актеры</a></li>
+                <li><a href="/<%- page.urls.director %>">Все режиссеры</a></li>
             </ul>
 
             <div class="clearfix"></div>
 
-            <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.collection %>" class="bl_groups"></a>
+            <a href="/<%- page.urls.content %>?tag=Коллекция" class="bl_groups"></a>
 
         </div>
     </div>
 </div>
 
-<% if (typeof soon == 'object' && soon.movies.length) { %>
+<% if (typeof soon === 'object' && soon.length) { %>
 
 <div class="bl1_1">
     <div class="bl2">
@@ -40,7 +40,7 @@
             <div id="content2">
                 <ul id="slides2">
 
-                    <% soon.movies.forEach(function (movie) { %>
+                    <% soon.forEach(function (movie) { %>
 
                     <li>
                         <span class="date_treler">
@@ -69,10 +69,61 @@
 
 <% } %>
 
-<% if (typeof page.adv == 'object' && page.adv.left) { %>
+<% if (typeof news === 'object' && news.length) { %>
+<% news.forEach(function (content) { %>
+<div style="float: left; width: 100%;">
+    <div style="margin: 0; padding: 10px 15px 10px 0">
+        <a href="<%- content.url %>" class="cinemapress-news">
+            <img src="<%- content.image %>" class="cinemapress-news-image" alt="<%- content.title %>">
+            <div class="cinemapress-news-title">
+                <%- content.title %>
+            </div>
+        </a>
+    </div>
+</div>
+<% }); %>
+<div style="clear: both"></div>
+<% } %>
+
+<% if (typeof page.adv === 'object' && page.adv.left) { %>
 <div style="clear: both;"></div>
 <div style="text-align: center; margin: 10px auto">
     <%- page.adv.left %>
 </div>
 <div style="clear: both;"></div>
+<% } %>
+
+<% if (typeof recent === 'object' && recent.length) { %>
+<% recent.slice(0, Math.ceil(recent.length/2)).forEach(function (comment) { %>
+<div style="margin: 10px 10px 0 0;">
+    <div class="cinemapress-recent" style="background: #7BB232; border: 0; color: #fff">
+        <div class="cinemapress-recent-head">
+            <% if (comment.avatar) { %>
+            <div class="cinemapress-recent-head-avatar" style="background: #fff; border: 5px #fff solid;">
+                <img src="<%- comment.avatar %>" alt="<%- comment.user %>">
+            </div>
+            <% } %>
+            <div class="cinemapress-recent-head-meta">
+                <div>
+                    <a href="<%- comment.url %>" style="color: #fff"><%- comment.title %></a>
+                </div>
+                <div>
+                        <span style="color: #fff">
+                            <%- comment.user %>
+                        </span>
+                    <span style="color: #fff">
+                            сказал(а)
+                        </span>
+                    <span style="color: #fff">
+                            <%- comment.date %>
+                        </span>
+                </div>
+            </div>
+        </div>
+        <div class="cinemapress-recent-comment" style="background: #fff; color: #000">
+            <%- comment.comment %>
+        </div>
+    </div>
+</div>
+<% }); %>
 <% } %>
