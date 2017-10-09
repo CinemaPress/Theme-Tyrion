@@ -113,13 +113,11 @@
                                                         <div class="clearfix"></div>
 
                                                         <% if (page.seo) { %>
-
                                                         <div class="fulldisc">
                                                             <div style="display:inline;">
                                                                 <%- page.seo %>
                                                             </div>
                                                         </div>
-
                                                         <% } %>
 
                                                         <div style="clear:both"></div>
@@ -141,11 +139,13 @@
 
                                                         <div class="section">
                                                             <ul class="tabz">
+                                                                <% if (page.urls.movies.online) { %>
                                                                 <li>
                                                                     <a href="<%- movie.url %>/<%- page.urls.movies.online %>">
                                                                         Онлайн
                                                                     </a>
                                                                 </li>
+                                                                <% } %>
                                                                 <li class="current">
                                                                     Трейлер
                                                                 </li>

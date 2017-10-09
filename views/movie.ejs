@@ -88,17 +88,14 @@
                                                 <div class="sh0">
                                                     <div class="sh1">
                                                         <div class="sh2">
-
                                                             <div class="sh17">
                                                                 <div class="sh18">
                                                                     <%- movie.year %>
                                                                 </div>
                                                             </div>
-
                                                             <h1>
                                                                 <%- movie.title %>
                                                             </h1>
-
                                                         </div>
                                                     </div>
                                                     <% if (movie.premiere) { %>
@@ -115,10 +112,9 @@
                                                         <div class="posterfull">
                                                             <img src="<%- movie.poster %>" alt="<%- movie.title %> <%- movie.year %> постер">
                                                         </div>
-                                                        <div class="fullplaybtn">
-                                                            <a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="btn_viewfilm" rel="nofollow"></a>
-
-                                                        </div>
+                                                        <% if (page.urls.movies.online) { %>
+                                                        <div class="fullplaybtn"><a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="btn_viewfilm" rel="nofollow"></a></div>
+                                                        <% } %>
 
                                                         <ul class="fullinfo">
                                                             <% if (movie.year_url) { %>
