@@ -184,6 +184,7 @@
                                                         <% } %>
 
                                                         <div class="section">
+                                                            <% if (page.urls.movies.online || page.urls.movies.trailer) { %>
                                                             <ul class="tabz">
                                                                 <% if (page.urls.movies.online) { %>
                                                                 <li>
@@ -200,6 +201,7 @@
                                                                 </li>
                                                                 <% } %>
                                                             </ul>
+                                                            <% } %>
                                                             <div>
                                                                 <div class="box visible" style="width: 100%; height: 370px; border-radius: 10px; background: transparent;overflow: hidden;">
                                                                     <%- page.player %>

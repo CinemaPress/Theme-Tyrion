@@ -138,6 +138,7 @@
                                                         <% } %>
 
                                                         <div class="section">
+                                                            <% if (page.urls.movies.online || page.urls.movies.trailer) { %>
                                                             <ul class="tabz">
                                                                 <% if (page.urls.movies.online) { %>
                                                                 <li>
@@ -154,6 +155,7 @@
                                                                 </li>
                                                                 <% } %>
                                                             </ul>
+                                                            <% } %>
                                                             <div>
                                                                 <%- page.player %>
                                                             </div>
