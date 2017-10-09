@@ -15,16 +15,10 @@
     </div>
 </div>
 
-<% if (page.social) { %>
-
-<% if (page.social.vk) { %>
-
+<% if (page.social && page.social.vk) { %>
 <div class="bl_rek">
     <a href="<%- page.social.vk %>" target="_blank" class="bl_vk"></a>
 </div>
-
-<% } %>
-
 <% } %>
 
 <% if (typeof page.adv === 'object' && page.adv.right) { %>

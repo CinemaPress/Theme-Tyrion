@@ -17,9 +17,11 @@
                     <input type="submit" class="search_but" value="" rel="nofollow"/>
                 </form>
             </div>
+            <% page.urls.years.slice(0,1).forEach(function(year) { %>
             <div class="login">
-                <a href="/<%- page.urls.year %>/2017" rel="nofollow" class="new_films"></a>
+                <a href="<%- year.url %>" rel="nofollow" class="new_films"></a>
             </div>
+            <% }); %>
         </div>
     </div>
 </div>
@@ -59,7 +61,7 @@
 
                                             <div class="bl_seo_txt_h" style="border-radius: 15px; margin-bottom: 10px">
                                                 <div class="bl_seo_txt_bl_2">
-                                                    <h1>Фильмы онлайн</h1>
+                                                    <h1><%- page.title %></h1>
                                                 </div>
                                             </div>
 
@@ -87,12 +89,10 @@
                                                     </div>
                                                 </div>
 
-                                                <% if (category.movies.length) { %>
-
-                                                <% category.movies.forEach(function (movie) { %>
+                                                <% if (category.movies.length) {
+                                                    category.movies.forEach(function (movie) { %>
 
                                                 <div class="sh0">
-
                                                     <div class="sh1">
                                                         <div class="sh2">
                                                             <div class="sh17">
@@ -115,7 +115,6 @@
                                                     </div>
                                                     <% } %>
                                                     <div class="sh15">
-
                                                         <div class="postershortbox">
                                                             <div class="postershort">
                                                                 <a href="<%- movie.url %>">
@@ -137,7 +136,6 @@
                                                                 </a>
                                                             </div>
                                                         </div>
-
                                                         <ul class="shortinfo">
                                                             <% if (movie.year_url) { %>
                                                             <li><b>Год выпуска:</b> <%- movie.year_url %></li>
@@ -147,7 +145,6 @@
                                                             <% } %>
                                                             <% if (movie.genres_url) { %>
                                                             <li><b>Жанр:</b> <%- movie.genres_url %></li>
-
                                                             <% } %>
                                                             <% if (movie.directors_url) { %>
                                                             <li><b>Режиссер:</b> <%- movie.directors_url %></li>
@@ -156,7 +153,6 @@
                                                             <li><b>В ролях:</b> <%- movie.actors_url %></li>
                                                             <% } %>
                                                         </ul>
-
                                                         <% if (movie.description_short) { %>
                                                         <div class="shortdisc" style="margin-top: 20px; text-align: justify;">
                                                             <div style="display:inline;">
@@ -164,9 +160,7 @@
                                                             </div>
                                                         </div>
                                                         <% } %>
-
                                                     </div>
-
                                                     <div class="sh11">
                                                         <div class="sh10">
                                                             <span>
@@ -178,9 +172,8 @@
                                                             </span>
                                                         </div>
                                                         <div class="bf_fs_see">
-                                                            <a href="<%- movie.url %>" rel="nofollow">Смотреть фильм</a>
+                                                            <a href="<%- movie.url %>" rel="nofollow">Подробнее ...</a>
                                                         </div>
-
                                                         <div class="sh13">
                                                             <span class="item_first">Рейтинг КП:
                                                                 <span class="num"><%- movie.kp_rating/10 %></span>
@@ -190,14 +183,8 @@
                                                             </span>
                                                         </div>
                                                     </div>
-
                                                 </div>
-
-                                                <% }); %>
-
-                                                <% } %>
-
-                                                <% }); } } } %>
+                                                <% }); } }); } } } %>
 
                                                 <% if (typeof page.pagination === 'object') { %>
                                                 <div class="pagination">
@@ -245,10 +232,8 @@
                 </div>
 
                 <div class="recentlyViewedBlock" style="margin: 25px; display: none;">
-
                     <div>Вы надавно смотрели:</div>
                     <div id="recentlyViewed"></div>
-
                 </div>
 
                 <div id="spacer"></div>

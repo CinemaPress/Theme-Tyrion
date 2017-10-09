@@ -17,9 +17,11 @@
                     <input type="submit" class="search_but" value="" rel="nofollow"/>
                 </form>
             </div>
+            <% page.urls.years.slice(0,1).forEach(function(year) { %>
             <div class="login">
-                <a href="/<%- page.urls.year %>/2017" rel="nofollow" class="new_films"></a>
+                <a href="<%- year.url %>" rel="nofollow" class="new_films"></a>
             </div>
+            <% }); %>
         </div>
     </div>
 </div>
@@ -76,14 +78,12 @@
                                             </div>
 
                                             <% if (page.seo) { %>
-
                                             <div class="bottom_descr">
                                                 <div class="bl_seo_txt bl_seo_txt_txt">
                                                     <%- page.seo %>
                                                 </div>
                                                 <div class="clear"></div>
                                             </div>
-
                                             <% } %>
 
                                             <div id="cinemapress-content">
@@ -136,10 +136,8 @@
                 </div>
 
                 <div class="recentlyViewedBlock" style="margin: 25px; display: none;">
-
                     <div>Вы надавно смотрели:</div>
                     <div id="recentlyViewed"></div>
-
                 </div>
 
                 <div id="spacer"></div>
