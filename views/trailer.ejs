@@ -169,7 +169,7 @@
                                                             <div style="clear:both;"></div>
 
                                                             <% if (movie.pictures.length) { %>
-                                                            <div style="margin: 10px auto; text-align: center;">
+                                                            <div style="margin: 10px auto; text-align: center;" id="lightgallery">
                                                                 <% movie.pictures.forEach(function (picture) { %>
                                                                 <% var ahref = page.urls.movies.picture
                                                                         ? movie.url + '/' + page.urls.movies.picture
@@ -178,8 +178,8 @@
                                                                 <% }); %>
                                                             </div>
                                                             <% if (!page.urls.movies.picture) { %>
-                                                            <link href="/themes/drogo/public/css/lightgallery.min.css" rel="stylesheet">
-                                                            <script src="/themes/drogo/public/js/lightgallery.min.js"></script>
+                                                            <link href="/themes/tyrion/public/css/lightgallery.min.css" rel="stylesheet">
+                                                            <script src="/themes/tyrion/public/js/lightgallery.min.js"></script>
                                                             <script>lightGallery(document.getElementById('lightgallery'));</script>
                                                             <% } %>
                                                             <% } %>
