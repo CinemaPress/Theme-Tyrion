@@ -77,7 +77,7 @@
                                                             <span class="separ"></span>
                                                             <span>
                                                                 <a href="<%- movie.url %>">
-                                                                    <%- movie.title %>
+                                                                    <%= movie.title %>
                                                                 </a>    
                                                             </span>
                                                             <span class="separ"></span>
@@ -102,7 +102,7 @@
                                                             </div>
 
                                                             <h1>
-                                                                <%- movie.title %> скачать torrent
+                                                                <%= movie.title %> скачать torrent
                                                             </h1>
 
                                                         </div>
@@ -123,11 +123,11 @@
                                                         <div style="clear:both"></div>
 
                                                         <div class="episodesListBlock" style="display: none; margin: 10px auto">
-                                                            <h3><%- movie.title %> новые серии</h3>
+                                                            <h3><%= movie.title %> новые серии</h3>
                                                             <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                                                         </div>
 
-                                                        <h2>Скачать <%- movie.title %> <%- movie.year %> бесплатно torrent</h2>
+                                                        <h2>Скачать <%= movie.title %> <%- movie.year %> бесплатно torrent</h2>
 
                                                         <br/>
 
@@ -180,7 +180,7 @@
                                                                 <% var ahref = page.urls.movies.picture
                                                                         ? movie.url + '/' + page.urls.movies.picture
                                                                         : picture.picture_big %>
-                                                                <a href="<%- ahref %>"><img src="<%- picture.picture_min %>" alt="<%- movie.title %> <%- movie.year %> кадры" title="<%- movie.title %>"></a>
+                                                                <a href="<%- ahref %>"><img src="<%- picture.picture_min %>" alt="<%= movie.title %> <%- movie.year %> кадры" title="<%= movie.title %>"></a>
                                                                 <% }); %>
                                                             </div>
                                                             <% if (!page.urls.movies.picture) { %>
@@ -242,11 +242,11 @@
                                                             <div class="imgbox">
                                                                 <div class="img">
                                                                     <a href="<%- movie.url %>" rel="nofollow">
-                                                                        <img src="<%- movie.poster %>" alt="<%- movie.title %> <%- movie.year %>"/>
+                                                                        <img src="<%- movie.poster %>" alt="<%= movie.title %> <%- movie.year %>"/>
                                                                     </a>
                                                                 </div>
                                                                 <div class="reltexta">
-                                                                    <a href="<%- movie.url %>"><%- movie.title %> <%- movie.year %></a>
+                                                                    <a href="<%- movie.url %>"><%= movie.title %> <%- movie.year %></a>
                                                                 </div>
                                                             </div>
                                                         </div>

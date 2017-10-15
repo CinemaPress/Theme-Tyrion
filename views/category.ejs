@@ -117,10 +117,10 @@
 
                                                     <div class="catfilmbestbox_item">
                                                         <a href="<%- movie.url %>" rel="nofollow">
-                                                            <img src="<%- movie.poster %>" alt="<%- movie.title %> <%- movie.year %>" title="<%- movie.title %> <%- movie.year %>"></a>
+                                                            <img src="<%- movie.poster %>" alt="<%= movie.title %> <%- movie.year %>" title="<%= movie.title %> <%- movie.year %>"></a>
                                                         <a href="<%- movie.url %>">
                                                             <span>
-                                                                <%- movie.title %> <%- movie.year %>
+                                                                <%= movie.title %> <%- movie.year %>
                                                             </span>
                                                         </a>
                                                     </div>
@@ -172,7 +172,7 @@
                                                                 <div class="sh18"><%- movie.year %></div>
                                                             </div>
                                                             <div class="sh3">
-                                                                <a href="<%- movie.url %>"><%- movie.title %></a>
+                                                                <a href="<%- movie.url %>"><%= movie.title %></a>
                                                             </div>
 
                                                             <div class="favboxsh"></div>
@@ -193,7 +193,7 @@
                                                             <div class="postershort">
                                                                 <a href="<%- movie.url %>">
                                                                     <div class="cinemapress-poster">
-                                                                        <img src="<%- movie.poster %>" alt="<%- movie.title %> (<%- movie.year %>)" title="<%- movie.title %> (<%- movie.year %>)">
+                                                                        <img src="<%- movie.poster %>" alt="<%= movie.title %> (<%- movie.year %>)" title="<%= movie.title %> (<%- movie.year %>)">
                                                                         <% if (movie.quality) { %>
                                                                         <div class="cinemapress-quality">
                                                                             <span class="cinemapress-svg-quality"></span>

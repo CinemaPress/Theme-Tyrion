@@ -99,7 +99,7 @@
                                                                 <div class="sh18"><%- movie.year %></div>
                                                             </div>
                                                             <div class="sh3">
-                                                                <a href="<%- movie.url %>"><%- movie.title %> <% if (movie.season && movie.episode) { %><%- movie.season %> сезон <%- movie.episode %> серия<% } %></a>
+                                                                <a href="<%- movie.url %>"><%= movie.title %> <% if (movie.season && movie.episode) { %><%- movie.season %> сезон <%- movie.episode %> серия<% } %></a>
                                                             </div>
 
                                                             <div class="favboxsh"></div>
@@ -119,7 +119,7 @@
                                                             <div class="postershort">
                                                                 <a href="<%- movie.url %>">
                                                                     <div class="cinemapress-poster">
-                                                                        <img src="<%- movie.poster %>" alt="<%- movie.title %> (<%- movie.year %>)" title="<%- movie.title %> (<%- movie.year %>)">
+                                                                        <img src="<%- movie.poster %>" alt="<%= movie.title %> (<%- movie.year %>)" title="<%= movie.title %> (<%- movie.year %>)">
                                                                         <% if (movie.quality) { %>
                                                                         <div class="cinemapress-quality">
                                                                             <span class="cinemapress-svg-quality"></span>
