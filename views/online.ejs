@@ -150,8 +150,10 @@
                                                                 <% } %>
                                                             </ul>
                                                             <div>
-                                                                <div class="box visible" style="width: 100%; height: 370px; border-radius: 10px; background: transparent;overflow: hidden;">
+                                                                <div id="cinemapress-player" class="box visible" style="border-radius: 10px;">
+                                                                    <% if (page.player) { %>
                                                                     <%- page.player %>
+                                                                    <% } %>
                                                                 </div>
                                                             </div>
 
