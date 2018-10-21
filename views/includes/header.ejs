@@ -1,12 +1,12 @@
 <div style="height:432px;">
 
-    <a href="/" class="logov2_1">Главная</a>
+    <a href="/" class="logov2_1"><%- page.l.home %></a>
 
     <div class="searchv2_1">
         <div class="searchv2_1_back">
             <form method="get" name="searchform" action="/<%- page.urls.search %>/title">
-                <input id="story" class="searchv2_2" name="q" value="Введите ваш текст для поиска..." onblur="if(this.value=='') this.value='Введите ваш текст для поиска...';" onfocus="if(this.value=='Введите ваш текст для поиска...') this.value='';" type="text"/>
-                <input type="image" class="searchv2_3" src="/themes/tyrion/public/images/spacer.gif?1" alt=""/>
+                <input id="story" class="searchv2_2" name="q" value="<%- page.l.movieTitle %>..." onblur="if(this.value==='') this.value='<%- page.l.movieTitle %>...';" onfocus="if(this.value==='<%- page.l.movieTitle %>...') this.value='';" type="text"/>
+                <input type="image" class="searchv2_3" src="/themes/tyrion/public/images/spacer.gif" alt=""/>
             </form>
         </div>
     </div>
@@ -15,9 +15,9 @@
 
         <div class="loginv2_2 continueViewingBlock" style="display: none;">
             <p class="link">
-                <img src="/themes/tyrion/public/images/new/btn_trailer.png" style="margin: 5px 5px 0 0; width: 10px;" alt="Продолжить просмотр?">
+                <img src="/themes/tyrion/public/images/btn_trailer.png" style="margin: 5px 5px 0 0; width: 10px;" alt="<%- page.l.continue %>?">
                 <a href="javascript:void(0)" id="continueViewing">
-                    Продолжить просмотр?
+                    <%- page.l.continue %>?
                 </a>
             </p>
         </div>
@@ -28,27 +28,25 @@
         <a href="/" class="btnHome"></a>
         <ul>
             <li>
-                <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>">Фильмы</a>
+                <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>"><%- page.l.movies %></a>
             </li>
 
             <li>
-                <a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>">Мультфильмы</a>
+                <a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>"><%- page.l.cartoons %></a>
             </li>
             <li>
-                <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>">Сериалы</a>
+                <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>"><%- page.l.series %></a>
             </li>
             <li>
-                <a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>">Аниме</a>
+                <a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>"><%- page.l.anime %></a>
             </li>
             <li>
-                <a href="/<%- page.urls.type %>/<%- page.urls.types.tv %>">Передачи</a>
+                <a href="/<%- page.urls.type %>/<%- page.urls.types.tv %>"><%- page.l.tv %></a>
             </li>
-            <li><a href="#">ТОП 500</a>
+            <li><a href="javascript:void(0)"><%- page.l.top %></a>
                 <ul>
-                    <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=kinopoisk-rating-up">По рейтингу КиноПоиск</a></li>
-                    <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=imdb-rating-up">По рейтингу IMDb</a></li>
-                    <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=kinopoisk-vote-up">По голосам КиноПоиск</a></li>
-                    <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=imdb-vote-up">По голосам IMDb</a></li>
+                    <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=imdb-rating-up"><%- page.l.rating %> <%- page.l.imdb %></a></li>
+                    <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=kinopoisk-rating-up"><%- page.l.rating %> <%- page.l.kp %></a></li>
                 </ul>
             </li>
         </ul>
@@ -87,8 +85,8 @@
         <div class="bf_top_films_bl">
             <div class="bf_top_films_bl_title_back bf_top_films_bl_title bf_top_films_bl_title_back_1">
                 <div class="bf_top_films_bl_title_back_ic bf_top_films_bl_title_back_ic_1"></div>
-                ТОП фильмы
-                <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>" class="bf_top_films_bl_li_more bf_top_films_bl_li_more_1" rel="nofollow">Показать еще</a>
+                <%- page.l.top %>
+                <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>" class="bf_top_films_bl_li_more bf_top_films_bl_li_more_1" rel="nofollow"><%- page.l.more %></a>
             </div>
             <div class="bf_top_films_bl_li bf_top_films_bl_li_1">
                 <ul>
@@ -104,8 +102,8 @@
         <div class="bf_top_films_bl">
             <div class="bf_top_films_bl_title_back bf_top_films_bl_title bf_top_films_bl_title_back_2">
                 <div class="bf_top_films_bl_title_back_ic bf_top_films_bl_title_back_ic_2"></div>
-                Популярные
-                <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=imdb-vote-up" class="bf_top_films_bl_li_more bf_top_films_bl_li_more_2" rel="nofollow">Показать еще</a>
+                <%- page.l.popular %>
+                <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=imdb-vote-up" class="bf_top_films_bl_li_more bf_top_films_bl_li_more_2" rel="nofollow"><%- page.l.more %></a>
             </div>
             <div class="bf_top_films_bl_li bf_top_films_bl_li_2">
                 <ul class="bf_top_films_bl_li_2">
@@ -121,9 +119,9 @@
         <div class="bf_top_films_bl bf_top_films_bl_last">
             <div class="bf_top_films_bl_title_back bf_top_films_bl_title bf_top_films_bl_title_back_3">
                 <div class="bf_top_films_bl_title_back_ic bf_top_films_bl_title_back_ic_3"></div>
-                Новинки в кино
+                <%- page.l.premieres %>
                 <% page.urls.years.slice(0,1).forEach(function(year) { %>
-                <a href="<%- year.url %>" class="bf_top_films_bl_li_more bf_top_films_bl_li_more_3" rel="nofollow">Показать еще</a>
+                <a href="<%- year.url %>" class="bf_top_films_bl_li_more bf_top_films_bl_li_more_3" rel="nofollow"><%- page.l.more %></a>
                 <% }); %>
             </div>
             <div class="bf_top_films_bl_li bf_top_films_bl_li_3">

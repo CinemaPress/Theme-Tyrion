@@ -12,7 +12,7 @@
         <div class="right">
             <div class="search">
                 <form action="/<%- page.urls.search %>/title" name="searchform" method="get">
-                    <input type="text" class="search_inp" name="q" autocomplete="off" placeholder="Поиск на сайте..."/>
+                    <input type="text" class="search_inp" name="q" autocomplete="off" placeholder="<%- page.l.search %>..."/>
                     <input type="submit" class="search_but" value="" rel="nofollow"/>
                 </form>
             </div>
@@ -64,7 +64,7 @@
                                                         <span id="cinemapress-speedbar">
                                                             <span>
                                                                 <a href="/" rel="nofollow">
-                                                                    Главная
+                                                                    <%- page.l.home %>
                                                                 </a>
                                                             </span>
                                                             <% if (movie.genre_url) { %>
@@ -77,11 +77,11 @@
                                                             <span>
                                                                 <a href="<%- movie.url %>">
                                                                     <%= movie.title %>
-                                                                </a>    
+                                                                </a>
                                                             </span>
                                                             <span class="separ"></span>
                                                             <span>
-                                                                Трекер
+                                                                <%- page.l.download %>
                                                             </span>
                                                         </span>
                                                     </div>
@@ -100,9 +100,7 @@
                                                                 </div>
                                                             </div>
 
-                                                            <h1>
-                                                                <%= movie.title %> скачать torrent
-                                                            </h1>
+                                                            <h1><%- page.h1 %></h1>
 
                                                         </div>
                                                     </div>
@@ -122,11 +120,11 @@
                                                         <div style="clear:both"></div>
 
                                                         <div class="episodesListBlock" style="display: none; margin: 10px auto">
-                                                            <h3><%= movie.title %> новые серии</h3>
+                                                            <h3><%= movie.title %> <%- page.l.episodes %></h3>
                                                             <div id="episodesList" data-id="<%- movie.kp_id %>"></div>
                                                         </div>
 
-                                                        <h2>Скачать <%= movie.title %> <%- movie.year %> бесплатно torrent</h2>
+                                                        <h2><%- page.l.download %> <%= movie.title %> <%- movie.year %></h2>
 
                                                         <br/>
 
@@ -142,14 +140,14 @@
                                                                 <% if (page.urls.movies.online) { %>
                                                                 <li>
                                                                     <a href="<%- movie.url %>/<%- page.urls.movies.online %>">
-                                                                        Онлайн
+                                                                        <%- page.l.online %>
                                                                     </a>
                                                                 </li>
                                                                 <% } %>
                                                                 <% if (page.urls.movies.trailer) { %>
                                                                 <li>
                                                                     <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">
-                                                                        Трейлер
+                                                                        <%- page.l.trailer %>
                                                                     </a>
                                                                 </li>
                                                                 <% } %>
@@ -163,11 +161,10 @@
 
                                                             <div class="line_rating_n">
                                                                 <div class="social-likes" data-counters="no">
-                                                                    <div class="facebook" title="Поделиться ссылкой на Фейсбуке"></div>
-                                                                    <div class="twitter" title="Поделиться ссылкой в Твиттере"></div>
-                                                                    <div class="vkontakte" title="Поделиться ссылкой во Вконтакте"></div>
-                                                                    <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках"></div>
-                                                                    <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе"></div>
+                                                                    <div class="facebook" title="<%- page.l.facebook %>"></div>
+                                                                    <div class="twitter" title="<%- page.l.twitter %>"></div>
+                                                                    <div class="vkontakte" title="<%- page.l.vk %>"></div>
+                                                                    <div class="plusone" title="<%- page.l.google %>"></div>
                                                                 </div>
                                                             </div>
 
@@ -179,7 +176,7 @@
                                                                 <% var ahref = page.urls.movies.picture
                                                                         ? movie.url + '/' + page.urls.movies.picture
                                                                         : picture.picture_big %>
-                                                                <a href="<%- ahref %>"><img src="<%- picture.picture_min %>" alt="<%= movie.title %> <%- movie.year %> кадры" title="<%= movie.title %>"></a>
+                                                                <a href="<%- ahref %>"><img src="<%- picture.picture_min %>" alt="<%= movie.title %> <%- movie.year %> <%- page.l.picture %>" title="<%= movie.title %>"></a>
                                                                 <% }); %>
                                                             </div>
                                                             <% if (!page.urls.movies.picture) { %>
@@ -282,7 +279,7 @@
                 </div>
 
                 <div class="recentlyViewedBlock" style="margin: 25px; display: none;">
-                    <div>Вы надавно смотрели:</div>
+                    <div><%- page.l.watched %>:</div>
                     <div id="recentlyViewed"></div>
                 </div>
 

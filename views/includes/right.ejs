@@ -1,6 +1,6 @@
 <div class="bl1_2">
     <div class="bl2">
-        <div class="bloc_nav1 bloc_nav1_cat">Категории</div>
+        <div class="bloc_nav1 bloc_nav1_cat"><%- page.l.menu %></div>
         <div class="bl_top">
             <ul>
                 <% page.urls.genres.forEach(function(genre) { %>
@@ -14,12 +14,6 @@
         </div>
     </div>
 </div>
-
-<% if (page.social && page.social.vk) { %>
-<div class="bl_rek">
-    <a href="<%- page.social.vk %>" target="_blank" class="bl_vk"></a>
-</div>
-<% } %>
 
 <% if (typeof page.adv === 'object' && page.adv.right) { %>
 <div style="clear: both;"></div>
@@ -48,7 +42,7 @@
                             <%- comment.user %>
                         </span>
                     <span style="color: #fff">
-                            сказал(а)
+                            <%- page.l.said %>
                         </span>
                     <span style="color: #fff">
                             <%- comment.date %>

@@ -12,7 +12,7 @@
         <div class="right">
             <div class="search">
                 <form action="/<%- page.urls.search %>/title" name="searchform" method="get">
-                    <input type="text" class="search_inp" name="q" autocomplete="off" placeholder="Поиск на сайте..."/>
+                    <input type="text" class="search_inp" name="q" autocomplete="off" placeholder="<%- page.l.search %>..."/>
                     <input type="submit" class="search_but" value="" rel="nofollow"/>
                 </form>
             </div>
@@ -64,7 +64,7 @@
                                                         <span id="cinemapress-speedbar">
                                                             <span>
                                                                 <a href="/" rel="nofollow">
-                                                                    Главная
+                                                                    <%- page.l.home %>
                                                                 </a>
                                                             </span>
                                                             <span class="separ"></span>
@@ -90,9 +90,7 @@
                                                 <div class="sh0">
                                                     <div class="sh1">
                                                         <div class="sh2">
-                                                            <h1>
-                                                                <%= page.title %>
-                                                            </h1>
+                                                            <h1><%- page.h1 %></h1>
                                                         </div>
                                                     </div>
 
@@ -134,7 +132,7 @@
                 </div>
 
                 <div class="recentlyViewedBlock" style="margin: 25px; display: none;">
-                    <div>Вы надавно смотрели:</div>
+                    <div><%- page.l.watched %>:</div>
                     <div id="recentlyViewed"></div>
                 </div>
 

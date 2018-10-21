@@ -1,32 +1,29 @@
 <div class="bl1">
     <div class="bl2">
-        <div class="bloc_nav bloc_nav_nav">Навигация</div>
+        <div class="bloc_nav bloc_nav_nav"><%- page.l.navigation %></div>
         <div class="bl_nav">
             <ul style="margin-bottom: 20px;">
-                <li><a href="/">Главная страница</a></li>
-                <li class="sub new_films"><a rel="nofollow">Новинки фильмов</a>
+                <li><a href="/"><%- page.l.home %></a></li>
+                <li class="sub new_films"><a rel="nofollow"><%- page.l.premieres %></a>
                     <ul class="sub_m">
                         <% page.urls.years.slice(0,6).forEach(function(year) { %>
                         <li>
                             <a href="<%- year.url %>">
-                                Новинки фильмов <%- year.title %>
+                                <%- page.l.movies %> <%- year.title %>
                             </a>
                         </li>
                         <% }); %>
                     </ul>
                 </li>
 
-                <li><a href="/<%- page.urls.genre %>">Все жанры</a></li>
-                <li><a href="/<%- page.urls.year %>">Все годы</a></li>
-                <li><a href="/<%- page.urls.country %>">Все страны</a></li>
-                <li><a href="/<%- page.urls.actor %>">Все актеры</a></li>
-                <li><a href="/<%- page.urls.director %>">Все режиссеры</a></li>
+                <li><a href="/<%- page.urls.genre %>"><%- page.l.allGenres %></a></li>
+                <li><a href="/<%- page.urls.year %>"><%- page.l.allYears %></a></li>
+                <li><a href="/<%- page.urls.country %>"><%- page.l.allCountries %></a></li>
+                <li><a href="/<%- page.urls.actor %>"><%- page.l.allActors %></a></li>
+                <li><a href="/<%- page.urls.director %>"><%- page.l.allDirectors %></a></li>
             </ul>
 
             <div class="clearfix"></div>
-
-            <a href="/<%- page.urls.content %>?tag=Коллекция" class="bl_groups"></a>
-
         </div>
     </div>
 </div>
@@ -35,7 +32,7 @@
 
 <div class="bl1_1">
     <div class="bl2">
-        <div class="bloc_nav bloc_nav_scoro">Скоро</div>
+        <div class="bloc_nav bloc_nav_scoro"><%- page.l.soon %></div>
         <div class="bloc2">
             <div id="content2">
                 <ul id="slides2">
@@ -51,7 +48,7 @@
                             </span>
                             <br>
                             <span>
-                                В прокате с <%- movie.premiere %>
+                                <%- page.l.premiere %>  <%- movie.premiere %>
                             </span>
                         </span>
                         <a href="<%- movie.url %>">
@@ -111,7 +108,7 @@
                             <%- comment.user %>
                         </span>
                     <span style="color: #fff">
-                            сказал(а)
+                            <%- page.l.said %>
                         </span>
                     <span style="color: #fff">
                             <%- comment.date %>

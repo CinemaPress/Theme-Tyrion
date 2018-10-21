@@ -16,23 +16,23 @@
         <div class="fmenuv2_1">
             <ul>
                 <li>
-                    <a href="/">Главная</a>
+                    <a href="/"><%- page.l.home %></a>
                 </li>
                 <li>
-                    <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>">Фильмы</a>
+                    <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>"><%- page.l.movies %></a>
                 </li>
 
                 <li>
-                    <a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>">Мультфильмы</a>
+                    <a href="/<%- page.urls.type %>/<%- page.urls.types.mult %>"><%- page.l.cartoons %></a>
                 </li>
                 <li>
-                    <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>">Сериалы</a>
+                    <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>"><%- page.l.series %></a>
                 </li>
                 <li>
-                    <a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>">Аниме</a>
+                    <a href="/<%- page.urls.type %>/<%- page.urls.types.anime %>"><%- page.l.anime %></a>
                 </li>
                 <li>
-                    <a href="/<%- page.urls.type %>/<%- page.urls.types.tv %>">Передачи</a>
+                    <a href="/<%- page.urls.type %>/<%- page.urls.types.tv %>"><%- page.l.tv %></a>
                 </li>
             </ul>
         </div>
@@ -44,7 +44,7 @@
     &copy;&nbsp;<%- new Date().getFullYear() %>&nbsp;<a href="https://cinemapress.org" target="_blank">CinemaPress&nbsp;ACMS</a>
 </div>
 <div style="text-align:right; margin:30px 20px 0 0;">
-    Для связи с администрацией: <span id="mylo">Activate JS</span><script>(function(d,i,l,r){d.getElementById(i).innerHTML=l+'@'+r;})(window.document,'mylo','<%- page.email.split('@')[0] %>','<%- page.email.split('@')[1] %>');</script>
+    Email: <span id="mylo">Activate JS</span><script>(function(d,i,l,r){d.getElementById(i).innerHTML=l+'@'+r;})(window.document,'mylo','<%- page.email.split('@')[0] %>','<%- page.email.split('@')[1] %>');</script>
 </div>
 
 <script src="/themes/tyrion/public/js/all.js"></script>

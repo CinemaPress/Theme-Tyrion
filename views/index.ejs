@@ -12,7 +12,7 @@
         <div class="right">
             <div class="search">
                 <form action="/<%- page.urls.search %>/title" name="searchform" method="get">
-                    <input type="text" class="search_inp" name="q" autocomplete="off" placeholder="Поиск на сайте..."/>
+                    <input type="text" class="search_inp" name="q" autocomplete="off" placeholder="<%- page.l.search %>..."/>
                     <input type="submit" class="search_but" value="" rel="nofollow"/>
                 </form>
             </div>
@@ -60,7 +60,7 @@
 
                                             <div class="bl_seo_txt_h" style="border-radius: 15px; margin-bottom: 10px">
                                                 <div class="bl_seo_txt_bl_2">
-                                                    <h1><%= page.title %></h1>
+                                                    <h1><%- page.h1 %></h1>
                                                 </div>
                                             </div>
 
@@ -98,7 +98,7 @@
                                                                 <div class="sh18"><%- movie.year %></div>
                                                             </div>
                                                             <div class="sh3">
-                                                                <a href="<%- movie.url %>"><%= movie.title %> <% if (movie.season && movie.episode) { %><%- movie.season %> сезон <%- movie.episode %> серия<% } %></a>
+                                                                <a href="<%- movie.url %>"><%= movie.title %> <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% } %></a>
                                                             </div>
 
                                                             <div class="favboxsh"></div>
@@ -108,7 +108,7 @@
                                                     <div class="sh4">
                                                         <div class="sh5">
                                                             <div class="sh6">
-                                                                <div class="sh9">Релиз: <%- movie.premiere %></div>
+                                                                <div class="sh9"><%- page.l.premiere %>: <%- movie.premiere %></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -137,19 +137,19 @@
                                                         </div>
                                                         <ul class="shortinfo">
                                                             <% if (movie.year_url) { %>
-                                                            <li><b>Год выпуска:</b> <%- movie.year_url %></li>
+                                                            <li><strong><%- page.l.year %>:</strong> <%- movie.year_url %></li>
                                                             <% } %>
                                                             <% if (movie.countries_url) { %>
-                                                            <li><b>Страна:</b> <%- movie.countries_url %></li>
+                                                            <li><strong><%- page.l.countries %>:</strong> <%- movie.countries_url %></li>
                                                             <% } %>
                                                             <% if (movie.genres_url) { %>
-                                                            <li><b>Жанр:</b> <%- movie.genres_url %></li>
+                                                            <li><strong><%- page.l.genres %>:</strong> <%- movie.genres_url %></li>
                                                             <% } %>
                                                             <% if (movie.directors_url) { %>
-                                                            <li><b>Режиссер:</b> <%- movie.directors_url %></li>
+                                                            <li><strong><%- page.l.directors %>:</strong> <%- movie.directors_url %></li>
                                                             <% } %>
                                                             <% if (movie.actors_url) { %>
-                                                            <li><b>В ролях:</b> <%- movie.actors_url %></li>
+                                                            <li><strong><%- page.l.actors %>:</strong> <%- movie.actors_url %></li>
                                                             <% } %>
                                                         </ul>
                                                         <% if (movie.description_short) { %>
@@ -171,13 +171,13 @@
                                                             </span>
                                                         </div>
                                                         <div class="bf_fs_see">
-                                                            <a href="<%- movie.url %>" rel="nofollow">Подробнее ...</a>
+                                                            <a href="<%- movie.url %>" rel="nofollow"><%- page.l.more %> ...</a>
                                                         </div>
                                                         <div class="sh13">
-                                                            <span class="item_first">Рейтинг КП:
+                                                            <span class="item_first"><%- page.l.rating %> <%- page.l.kp %>:
                                                                 <span class="num"><%- movie.kp_rating/10 %></span>
                                                             </span>
-                                                            <span class="item">Рейтинг IMDb:
+                                                            <span class="item"><%- page.l.rating %> <%- page.l.imdb %>:
                                                                 <span class="num"><%- movie.imdb_rating/10 %></span>
                                                             </span>
                                                         </div>
@@ -231,7 +231,7 @@
                 </div>
 
                 <div class="recentlyViewedBlock" style="margin: 25px; display: none;">
-                    <div>Вы надавно смотрели:</div>
+                    <div><%- page.l.watched %>:</div>
                     <div id="recentlyViewed"></div>
                 </div>
 
