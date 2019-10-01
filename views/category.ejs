@@ -7,24 +7,6 @@
 </head>
 <body class="class_body">
 
-<div class="new_top_menu" id="new_top_menu">
-    <div class="line">
-        <div class="right">
-            <div class="search">
-                <form action="/<%- page.urls.search %>/title" name="searchform" method="get">
-                    <input type="text" class="search_inp" name="q" autocomplete="off" placeholder="<%- page.l.search %>..."/>
-                    <input type="submit" class="search_but" value="" rel="nofollow"/>
-                </form>
-            </div>
-            <% page.urls.years.slice(0,1).forEach(function(year) { %>
-            <div class="login">
-                <a href="<%- year.url %>" rel="nofollow" class="new_films"></a>
-            </div>
-            <% }); %>
-        </div>
-    </div>
-</div>
-
 <div id="hv2_1">
 
     <div class="brand_back"></div>
@@ -138,24 +120,32 @@
                                             </div>
                                             <% } %>
 
+                                            <div class="randomMovieCategory">
+                                                <div class="cinemapress-random-category"
+                                                     onclick="window.location.href='<%- page.url %>?random'">
+                                                    <img src="/themes/tyrion/public/images/dice.svg" alt="<%- page.l.random %>">
+                                                    <span><%- page.l.lucky %></span>
+                                                    <small><%- page.l.random %></small>
+                                                </div>
+                                            </div>
+
                                             <% if (typeof page.sorting === 'object') { %>
-                                            <div id="news_set_sort">
-                                                <span><%- page.l.sorting %>:</span>
-                                                <p>
+                                            <div class="cinemapress-sort">
                                                 <% page.sorting.forEach(function (sort) { %>
                                                 <% if (sort.active) { %>
-                                                <a href="<%- sort.url %>"> <strong><%- sort.name %></strong> </a>
+                                                <a href="<%- sort.url %>" class="cinemapress-sort-active">
+                                                    <%- sort.name %>
+                                                </a>
                                                 <% } else { %>
                                                 <a href="<%- sort.url %>">
                                                     <%- sort.name %>
                                                 </a>
                                                 <% } %>
                                                 <% }); %>
-                                                </p>
                                             </div>
                                             <% } %>
 
-                                            <div id='cinemapress-content'>
+                                            <div id="cinemapress-content">
 
                                                 <% if (typeof movies === 'object' && movies.length) { %>
 
@@ -318,12 +308,14 @@
 
                 </div>
 
+                <div class="clear"></div>
+
                 <div class="recentlyViewedBlock" style="margin: 25px; display: none;">
                     <div><%- page.l.watched %>:</div>
                     <div id="recentlyViewed"></div>
                 </div>
 
-                <div id="spacer"></div>
+                <div class="clear"></div>
 
             </div>
 

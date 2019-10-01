@@ -1,10 +1,10 @@
 # Theme «tyrion»
 
-![Theme «tyrion» for CinemaPress ACMS](https://raw.githubusercontent.com/CinemaPress/Theme-Tyrion/master/screenshot.png "Theme «tyrion» for CinemaPress ACMS")
+![Theme «tyrion» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Tyrion/master/screenshot.png "Theme «tyrion» for CinemaPress")
 
-:art: Theme «tyrion» for CinemaPress ACMS
+:art: Theme «tyrion» for CinemaPress
 
-- [Tyrion.CinemaPress.org](http://Tyrion.CinemaPress.org/)
+- [Tyrion.CinemaPress.io](http://Tyrion.CinemaPress.io/)
 
 ## How to install?
 1. Download [GitHub](https://github.com/CinemaPress/Theme-Tyrion/archive/master.zip) or [GitLab](https://gitlab.com/CinemaPress/Theme-Tyrion/repository/archive.zip) or [BitBucket](https://bitbucket.org/cinemapress/theme-tyrion/get/master.zip) or [Coding](https://coding.net/u/CinemaPress/p/Theme-Tyrion/git/archive/master.zip)
@@ -14,7 +14,7 @@
 
 ## Installation via terminal
 ```
-~# wget cinemapress.org/i -qO i && chmod +x i && ./i 3
+~# bash <(wget -qO- cinemapress.sh)
 ```
 
 ## Как установить?
@@ -25,5 +25,5 @@
 
 ## Установка через терминал
 ```
-~# wget cinemapress.org/i -qO i && chmod +x i && ./i 3
+~# bash <(wget -qO- cinemapress.sh)
 ```

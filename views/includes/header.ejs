@@ -1,25 +1,31 @@
 <div style="height:432px;">
 
-    <a href="/" class="logov2_1"><%- page.l.home %></a>
+    <a href="/" class="logov2_1" style="background:url(/themes/tyrion/public/images/logo.png?v=<%- page.ver %>) no-repeat 0 0;"><%- page.l.home %></a>
 
     <div class="searchv2_1">
         <div class="searchv2_1_back">
-            <form method="get" name="searchform" action="/<%- page.urls.search %>/title">
-                <input id="story" class="searchv2_2" name="q" value="<%- page.l.movieTitle %>..." onblur="if(this.value==='') this.value='<%- page.l.movieTitle %>...';" onfocus="if(this.value==='<%- page.l.movieTitle %>...') this.value='';" type="text"/>
-                <input type="image" class="searchv2_3" src="/themes/tyrion/public/images/spacer.gif" alt=""/>
+            <form method="get" name="searchform" action="/<%- page.urls.search %>">
+                <input id="story" class="searchv2_2" name="q" value="<%- page.l.movieTitle %>..." onblur="if(this.value==='') this.value='<%- page.l.movieTitle %>...';" onfocus="if(this.value==='<%- page.l.movieTitle %>...') this.value='';" type="text" data-autocomplete="desktop">
+                <input type="image" class="searchv2_3" src="/themes/tyrion/public/images/spacer.gif" alt="">
+                <div class="cinemapress-autocomplete" data-autocomplete="desktop"></div>
             </form>
         </div>
     </div>
 
     <div class="loginv2_1">
 
-        <div class="loginv2_2 continueViewingBlock" style="display: none;">
-            <p class="link">
-                <img src="/themes/tyrion/public/images/btn_trailer.png" style="margin: 5px 5px 0 0; width: 10px;" alt="<%- page.l.continue %>?">
-                <a href="javascript:void(0)" id="continueViewing">
-                    <%- page.l.continue %>?
+        <div class="continueViewingBlock" style="float:right;display:none">
+            <a href="javascript:void(0)" id="continueViewing">
+                <img src="/themes/tyrion/public/images/play.svg" alt="<%- page.l.continue %>?" title="<%- page.l.continue %>?" style="width: 44px;height: 44px;margin: 0 10px;">
+            </a>
+        </div>
+
+        <div class="randomMovieMenu">
+            <div class="cinemapress-random-menu">
+                <a href="/?random" title="<%- page.l.lucky %>">
+                    <img src="/themes/tyrion/public/images/dice.svg" alt="<%- page.l.lucky %>">
                 </a>
-            </p>
+            </div>
         </div>
 
     </div>
@@ -60,6 +66,9 @@
             <% if (page.social.facebook) { %>
             <a class="ftrsocbox_item soch-fb" href="<%- page.social.facebook %>" target="_blank"></a>
             <% } %>
+            <% if (page.social.telegram) { %>
+            <a class="ftrsocbox_item soch-tw" href="<%- page.social.telegram %>" target="_blank"></a>
+            <% } %>
             <% if (page.social.youtube) { %>
             <a class="ftrsocbox_item soch-yt" href="<%- page.social.youtube %>" target="_blank"></a>
             <% } %>
@@ -68,9 +77,6 @@
             <% } %>
             <% if (page.social.twitter) { %>
             <a class="ftrsocbox_item soch-od" href="<%- page.social.twitter %>" target="_blank"></a>
-            <% } %>
-            <% if (page.social.gplus) { %>
-            <a class="ftrsocbox_item soch-tw" href="<%- page.social.gplus %>" target="_blank"></a>
             <% } %>
         </div>
 
