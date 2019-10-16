@@ -89,7 +89,7 @@
                                                     <div class="sh15">
 
                                                         <div class="posterfull">
-                                                            <img src="<%- movie.poster %>" alt="<%= page.title %>" title="<%= page.title %>" id="cinemapress-poster">
+                                                            <img src="<%- movie.poster %>" alt="<%= page.title %>" title="<%= page.title %>" data-cinemapress-poster="<%- movie.poster %>">
                                                         </div>
                                                         <% if (page.urls.movies.online) { %>
                                                         <div class="fullplaybtn"><a href="<%- movie.url %>/<%- page.urls.movies.online %>" class="btn_viewfilm" rel="nofollow"><%- page.l.online %></a></div>
