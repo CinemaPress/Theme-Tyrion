@@ -193,7 +193,7 @@
                                                         <% contents.forEach(function (content) { %>
                                                         <div class="cinemapress-news-block">
                                                             <div style="margin: 0; padding: 10px">
-                                                                <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url(<%- content.image %>);">
+                                                                <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url('<%- content.image %>');">
                                                                     <div class="cinemapress-news-title">
                                                                         <%= content.title %>
                                                                     </div>
@@ -220,9 +220,9 @@
                                                     </div>
                                                     <div class="randomMovieRelated">
                                                         <div class="cinemapress-random-related"
-                                                             onclick="window.location.href='<%- category.url %>?random'"
+                                                             onclick="window.location.href='<%- (category.url.indexOf('?')+1 ? category.url + '&random' : category.url + '?random') %>'"
                                                              title="<%- page.l.random %>">
-                                                            <img src="/themes/tyrion/public/images/dice.svg" alt="<%- page.l.random %>">
+                                                            <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%- page.l.random %>">
                                                         </div>
                                                     </div>
                                                 </div>
