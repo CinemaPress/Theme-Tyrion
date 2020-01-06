@@ -4,11 +4,11 @@
         <div class="bl_top">
             <ul>
                 <% page.urls.genres.forEach(function(genre) { %>
-                <li>
-                    <a href="<%- genre.url %>">
-                        <%- genre.title %>
-                    </a>
-                </li>
+                    <li>
+                        <a href="<%- genre.url %>">
+                            <%- genre.title %>
+                        </a>
+                    </li>
                 <% }); %>
             </ul>
         </div>
@@ -16,44 +16,42 @@
 </div>
 
 <% if (typeof page.adv === 'object' && page.adv.right) { %>
-<div style="clear: both;"></div>
-<div style="text-align: center; margin: 10px auto">
-    <%- page.adv.right %>
-</div>
-<div style="clear: both;"></div>
+    <div style="clear: both;"></div>
+    <div style="text-align: center; margin: 10px auto">
+        <%- page.adv.right %>
+    </div>
+    <div style="clear: both;"></div>
 <% } %>
 
 <% if (typeof recent === 'object' && recent.length) { %>
-<% recent.slice(Math.ceil(recent.length/2), recent.length).forEach(function (comment) { %>
-<div style="margin: 10px 0;">
-    <div class="cinemapress-recent" style="background: #4595BE; border: 0; color: #fff">
-        <div class="cinemapress-recent-head">
-            <% if (comment.avatar) { %>
-            <div class="cinemapress-recent-head-avatar" style="background: #fff; border: 5px #fff solid;">
-                <img src="<%- comment.avatar %>" alt="<%- comment.user %>">
-            </div>
-            <% } %>
-            <div class="cinemapress-recent-head-meta">
-                <div>
-                    <a href="<%- comment.url %>" style="color: #fff"><%= comment.title %></a>
+    <% recent.slice(Math.ceil(recent.length/2), recent.length).forEach(function (comment) { %>
+        <div style="margin: 10px 0;">
+            <div class="cinemapress-comment">
+                <div class="cinemapress-comment-head">
+                    <div class="cinemapress-comment-head-avatar">
+                        <img src="<%- comment.avatar %>" alt="<%= comment.user %>">
+                    </div>
+                    <div class="cinemapress-comment-head-meta">
+                        <div class="cinemapress-comment-head-meta-title">
+                            <a href="<%- comment.url %>" title="<%= comment.title %>"><%= comment.title %></a>
+                        </div>
+                        <div class="cinemapress-comment-user" data-comment-id="<%- comment.id %>">
+                            <div class="cinemapress-comment-user-name">
+                                <%- comment.user %>
+                            </div><div class="cinemapress-comment-user-said">
+                                <%- page.l.said %>
+                            </div><div class="cinemapress-comment-user-date">
+                                <%- comment.date %>
+                            </div><div class="cinemapress-comment-user-link">
+                                <a href="<%- comment.url %>#c<%- comment.id %>" title="<%= comment.title %>">#</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                        <span style="color: #fff">
-                            <%- comment.user %>
-                        </span>
-                    <span style="color: #fff">
-                            <%- page.l.said %>
-                        </span>
-                    <span style="color: #fff">
-                            <%- comment.date %>
-                        </span>
+                <div class="cinemapress-comment-bg cinemapress-comment-radius">
+                    <%- comment.comment %>
                 </div>
             </div>
         </div>
-        <div class="cinemapress-recent-comment" style="background: #fff; color: #000">
-            <%- comment.comment %>
-        </div>
-    </div>
-</div>
-<% }); %>
+    <% }); %>
 <% } %>

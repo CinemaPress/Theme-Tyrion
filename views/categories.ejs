@@ -2,7 +2,7 @@
 <html lang="<%- page.language %>">
 <head>
 
-    <% include includes/head.ejs %>
+    <%- include('includes/head.ejs'); -%>
 
 </head>
 <body class="class_body">
@@ -20,7 +20,7 @@
 
                 <div id="header">
 
-                    <% include includes/header.ejs %>
+                    <%- include('includes/header.ejs'); -%>
 
                 </div>
 
@@ -34,7 +34,7 @@
 
                                         <div id="left">
 
-                                            <% include includes/left.ejs %>
+                                            <%- include('includes/left.ejs'); -%>
 
                                         </div>
 
@@ -59,12 +59,12 @@
                                             </div>
 
                                             <% if (page.seo) { %>
-                                            <div class="bottom_descr">
-                                                <div class="bl_seo_txt bl_seo_txt_txt">
-                                                    <%- page.seo %>
+                                                <div class="bottom_descr">
+                                                    <div class="bl_seo_txt bl_seo_txt_txt">
+                                                        <%- page.seo %>
+                                                    </div>
+                                                    <div class="clear"></div>
                                                 </div>
-                                                <div class="clear"></div>
-                                            </div>
                                             <% } %>
 
                                             <div id="cinemapress-content">
@@ -77,16 +77,16 @@
                                                     </div>
 
                                                     <% if (typeof categories === 'object' && categories.length) { %>
-                                                    <div style="clear: both"></div>
-                                                    <% categories.forEach(function (content) { %>
-                                                    <div style="float:left;width:50%;">
-                                                        <div style="margin:10px;padding:0;position:relative">
-                                                            <div class="cinemapress-categories" style="background-image:url('<%- content.image %>');"></div>
-                                                            <a href="<%- content.url %>" class="cinemapress-categories-title"><%= content.title %></a>
-                                                        </div>
-                                                    </div>
-                                                    <% }); %>
-                                                    <div style="clear: both"></div>
+                                                        <div style="clear: both"></div>
+                                                        <% categories.forEach(function (content) { %>
+                                                            <div style="float:left;width:50%;">
+                                                                <div style="margin:10px;padding:0;position:relative">
+                                                                    <div class="cinemapress-categories" style="background-image:url('<%- content.image %>');"></div>
+                                                                    <a href="<%- content.url %>" class="cinemapress-categories-title"><%= content.title %></a>
+                                                                </div>
+                                                            </div>
+                                                        <% }); %>
+                                                        <div style="clear: both"></div>
                                                     <% } %>
 
                                                 </div>
@@ -97,7 +97,7 @@
 
                                         <div id="right">
 
-                                            <% include includes/right.ejs %>
+                                            <%- include('includes/right.ejs'); -%>
 
                                         </div>
 
@@ -123,7 +123,7 @@
 
             <div id="footer">
 
-                <% include includes/footer.ejs %>
+                <%- include('includes/footer.ejs'); -%>
 
             </div>
 
