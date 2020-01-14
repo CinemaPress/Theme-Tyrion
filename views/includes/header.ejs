@@ -22,7 +22,7 @@
 
         <div class="randomMovieMenu">
             <div class="cinemapress-random-menu">
-                <a href="/?random" title="<%= page.l.lucky %>">
+                <a href="/?random=<%- Math.random() %>" title="<%= page.l.lucky %>">
                     <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%= page.l.lucky %>">
                 </a>
             </div>
