@@ -1,3 +1,50 @@
+<% if (typeof index === 'object') {
+        for (var type in index) {
+if (index.hasOwnProperty(type) && index[type].length && type === 'episode') {
+index[type].forEach(function (category) { %>
+
+    <div class="bl1_1">
+        <div class="bl2">
+            <div class="bloc2">
+                <div id="content2">
+                    <ul id="slides2">
+
+                        <% var moreEpisodes = false; %>
+                        <% if (category.movies.length) {
+                        category.movies.forEach(function (movie) { %>
+
+                            <li <% if (movie.hide) { moreEpisodes = true; %>style="display:none" data-more-episodes="hide"<% } %>>
+                                <span class="date_treler">
+                                    <span class="title">
+                                        <a href="<%- movie.url %>">
+                                            <%= movie.title %>
+                                        </a>
+                                    </span>
+                                    <br>
+                                    <span>
+                                        <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% if (movie.translate) { %><br><%- movie.translate %><% } %><% } %>
+                                    </span>
+                                </span>
+                                <a href="<%- movie.url %>">
+                                    <img src="<%- movie.poster %>" alt="<%= movie.title %>">
+                                </a>
+                            </li>
+
+                        <% }); } %>
+
+                    </ul>
+
+                    <% if (moreEpisodes) { %>
+                        <div class="moreEpisodes" onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
+                    <% } %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<% }); } } } %>
+
 <div class="bl1_2">
     <div class="bl2">
         <div class="bloc_nav1 bloc_nav1_cat"><%- page.l.menu %></div>

@@ -59,7 +59,7 @@
 
                                                 <% if (typeof index === 'object') {
                                                         for (var type in index) {
-                                                if (index.hasOwnProperty(type) && index[type].length) {
+                                                if (index.hasOwnProperty(type) && index[type].length  && type !== 'episode') {
                                                 index[type].forEach(function (category) { %>
 
                                                     <div class="bl_seo_txt_h" style="float: left; width: 100%;">
