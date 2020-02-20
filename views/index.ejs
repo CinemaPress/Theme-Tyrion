@@ -59,6 +59,50 @@
 
                                                 <% if (typeof index === 'object') {
                                                         for (var type in index) {
+                                                if (index.hasOwnProperty(type) && index[type].length && type === 'episode') {
+                                                index[type].forEach(function (category) { %>
+
+                                                    <div class="bl_seo_txt_h" style="float: left; width: 100%;">
+                                                        <div class="bl_seo_txt_bl_2">
+                                                            <h2>
+                                                                <%- category.name %>
+                                                            </h2>
+                                                        </div>
+                                                    </div>
+
+                                                    <% var moreEpisodes = false; %>
+                                                    <% if (category.movies.length) {
+                                                    category.movies.forEach(function (movie) { %>
+                                                    <div class="sh0" <% if (movie.hide) { moreEpisodes = true; %>style="display:none;width:100%;border:0;padding:0;margin:0" data-more-episodes="hide"<% } else { %>style="width:100%;border:0;padding:0;margin:0"<% } %>>
+                                                        <div class="sh4">
+                                                            <div class="sh5">
+                                                                <a href="<%- movie.url %>">
+                                                                    <div class="sh6" style="height:30px">
+                                                                        <div class="sh9" style="background:none;padding:0;width:100%;margin:0;color:#666">
+                                                                            <div style="float:left;margin:5px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap">
+                                                                                <%= movie.title %>
+                                                                            </div>
+                                                                            <div style="margin:5px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;text-align:right">
+                                                                                <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %> <% if (movie.translate) { %><%- movie.translate %><% } %><% } %>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <% }); } %>
+                                                    <style>.sh6:hover{opacity:.8;cursor:pointer}</style>
+
+                                                    <% if (moreEpisodes) { %>
+                                                        <div style="clear:both;height:10px"></div>
+                                                        <div class="moreEpisodes" onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
+                                                    <% } %>
+
+                                                <% }); } } } %>
+
+                                                <% if (typeof index === 'object') {
+                                                        for (var type in index) {
                                                 if (index.hasOwnProperty(type) && index[type].length  && type !== 'episode') {
                                                 index[type].forEach(function (category) { %>
 
