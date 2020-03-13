@@ -1,11 +1,15 @@
 <div style="height:432px;">
 
-    <a href="/" class="logov2_1" style="background:url('/themes/<%- page.theme %>/public/images/logo.svg?v=<%- page.ver %>') no-repeat 0 0;background-size: contain;"><%- page.l.home %></a>
+    <a href="/" class="logov2_1"
+       style="background:url('/themes/<%- page.theme %>/public/images/logo.svg?v=<%- page.ver %>') no-repeat 0 0;background-size: contain;"><%- page.l.home %></a>
 
     <div class="searchv2_1">
         <div class="searchv2_1_back">
             <form method="get" name="searchform" action="/<%- page.urls.search %>">
-                <input id="story" class="searchv2_2" name="q" value="<%- page.l.movieTitle %>..." onblur="if(this.value==='') this.value='<%- page.l.movieTitle %>...';" onfocus="if(this.value==='<%- page.l.movieTitle %>...') this.value='';" type="text" data-autocomplete="desktop">
+                <input id="story" class="searchv2_2" name="q" value="<%- page.l.movieTitle %>..."
+                       onblur="if(this.value==='') this.value='<%- page.l.movieTitle %>...';"
+                       onfocus="if(this.value==='<%- page.l.movieTitle %>...') this.value='';" type="text"
+                       data-autocomplete="desktop">
                 <input type="image" class="searchv2_3" src="/themes/<%- page.theme %>/public/images/spacer.gif" alt="">
                 <div class="cinemapress-autocomplete" data-autocomplete="desktop"></div>
             </form>
@@ -16,7 +20,8 @@
 
         <div class="continueViewingBlock" style="float:right;display:none">
             <a href="javascript:void(0)" id="continueViewing">
-                <img src="/themes/<%- page.theme %>/public/images/play.svg" alt="<%= page.l.continue %>?" title="<%= page.l.continue %>?" style="width: 44px;height: 44px;margin: 0 10px;">
+                <img src="/themes/<%- page.theme %>/public/images/play.svg" alt="<%= page.l.continue %>?"
+                     title="<%= page.l.continue %>?" style="width: 44px;height: 44px;margin: 0 10px;">
             </a>
         </div>
 
@@ -51,8 +56,12 @@
             </li>
             <li><a href="javascript:void(0)"><%- page.l.top %></a>
                 <ul>
-                    <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=imdb-rating-up"><%- page.l.rating %> <%- page.l.imdb %></a></li>
-                    <li><a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=kinopoisk-rating-up"><%- page.l.rating %> <%- page.l.kp %></a></li>
+                    <li>
+                        <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=imdb-rating-up"><%- page.l.rating %> <%- page.l.imdb %></a>
+                    </li>
+                    <li>
+                        <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=kinopoisk-rating-up"><%- page.l.rating %> <%- page.l.kp %></a>
+                    </li>
                 </ul>
             </li>
         </ul>
@@ -92,13 +101,19 @@
                 <div class="bf_top_films_bl_title_back bf_top_films_bl_title bf_top_films_bl_title_back_1">
                     <div class="bf_top_films_bl_title_back_ic bf_top_films_bl_title_back_ic_1"></div>
                     <%- page.l.top %>
-                    <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>" class="bf_top_films_bl_li_more bf_top_films_bl_li_more_1" rel="nofollow"><%- page.l.more %></a>
+                    <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>"
+                       class="bf_top_films_bl_li_more bf_top_films_bl_li_more_1" rel="nofollow"><%- page.l.more %></a>
                 </div>
                 <div class="bf_top_films_bl_li bf_top_films_bl_li_1">
                     <ul>
-                        <% slider.slice(0,6).forEach(function (movie) { %>
+                        <% slider.slice(0, 6).forEach(function (movie) { %>
                             <li>
-                                <a href="<%- movie.url %>"><% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%= movie.title %> <%- movie.year %><% } %></a>
+                                <a href="<%- movie.url %>">
+                                    <% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>
+                                    ... <%- movie.year %>
+                                    <% } else { %><%= movie.title %> <%- movie.year %>
+                                    <% } %>
+                                </a>
                             </li>
                         <% }); %>
                     </ul>
@@ -109,13 +124,19 @@
                 <div class="bf_top_films_bl_title_back bf_top_films_bl_title bf_top_films_bl_title_back_2">
                     <div class="bf_top_films_bl_title_back_ic bf_top_films_bl_title_back_ic_2"></div>
                     <%- page.l.popular %>
-                    <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=imdb-vote-up" class="bf_top_films_bl_li_more bf_top_films_bl_li_more_2" rel="nofollow"><%- page.l.more %></a>
+                    <a href="/<%- page.urls.type %>/<%- page.urls.types.movie %>?sorting=imdb-vote-up"
+                       class="bf_top_films_bl_li_more bf_top_films_bl_li_more_2" rel="nofollow"><%- page.l.more %></a>
                 </div>
                 <div class="bf_top_films_bl_li bf_top_films_bl_li_2">
                     <ul class="bf_top_films_bl_li_2">
-                        <% slider.slice(6,12).forEach(function (movie) { %>
+                        <% slider.slice(6, 12).forEach(function (movie) { %>
                             <li>
-                                <a href="<%- movie.url %>"><% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%= movie.title %> <%- movie.year %><% } %></a>
+                                <a href="<%- movie.url %>">
+                                    <% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>
+                                    ... <%- movie.year %>
+                                    <% } else { %><%= movie.title %> <%- movie.year %>
+                                    <% } %>
+                                </a>
                             </li>
                         <% }); %>
                     </ul>
@@ -126,15 +147,21 @@
                 <div class="bf_top_films_bl_title_back bf_top_films_bl_title bf_top_films_bl_title_back_3">
                     <div class="bf_top_films_bl_title_back_ic bf_top_films_bl_title_back_ic_3"></div>
                     <%- page.l.premieres %>
-                    <% page.urls.years.slice(0,1).forEach(function(year) { %>
-                        <a href="<%- year.url %>" class="bf_top_films_bl_li_more bf_top_films_bl_li_more_3" rel="nofollow"><%- page.l.more %></a>
+                    <% page.urls.years.slice(0, 1).forEach(function(year) { %>
+                        <a href="<%- year.url %>" class="bf_top_films_bl_li_more bf_top_films_bl_li_more_3"
+                           rel="nofollow"><%- page.l.more %></a>
                     <% }); %>
                 </div>
                 <div class="bf_top_films_bl_li bf_top_films_bl_li_3">
                     <ul class="bf_top_films_bl_li_3">
-                        <% slider.slice(12,18).forEach(function (movie) { %>
+                        <% slider.slice(12, 18).forEach(function (movie) { %>
                             <li>
-                                <a href="<%- movie.url %>"><% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%= movie.title %> <%- movie.year %><% } %></a>
+                                <a href="<%- movie.url %>">
+                                    <% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>
+                                    ... <%- movie.year %>
+                                    <% } else { %><%= movie.title %> <%- movie.year %>
+                                    <% } %>
+                                </a>
                             </li>
                         <% }); %>
                     </ul>

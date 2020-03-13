@@ -73,37 +73,48 @@
                                                     <% var moreEpisodes = false; %>
                                                     <% if (category.movies.length) {
                                                     category.movies.forEach(function (movie) { %>
-                                                    <div class="sh0" <% if (movie.hide) { moreEpisodes = true; %>style="display:none;width:100%;border:0;padding:0;margin:0" data-more-episodes="hide"<% } else { %>style="width:100%;border:0;padding:0;margin:0"<% } %>>
-                                                        <div class="sh4">
-                                                            <div class="sh5">
-                                                                <a href="<%- movie.url %>">
-                                                                    <div class="sh6" style="height:30px">
-                                                                        <div class="sh9" style="background:none;padding:0;width:100%;margin:0;color:#666">
-                                                                            <div style="float:left;margin:5px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap">
-                                                                                <%= movie.title %>
-                                                                            </div>
-                                                                            <div style="margin:5px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;text-align:right">
-                                                                                <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %> <% if (movie.translate) { %><%- movie.translate %><% } %><% } %>
+                                                        <div class="sh0"
+                                                             <% if (movie.hide) { moreEpisodes = true; %>style="display:none;width:100%;border:0;padding:0;margin:0"
+                                                             data-more-episodes="hide"
+                                                             <% } else { %>style="width:100%;border:0;padding:0;margin:0"
+                                                                <% } %>
+                                                        >
+                                                            <div class="sh4">
+                                                                <div class="sh5">
+                                                                    <a href="<%- movie.url %>">
+                                                                        <div class="sh6" style="height:30px">
+                                                                            <div class="sh9"
+                                                                                 style="background:none;padding:0;width:100%;margin:0;color:#666">
+                                                                                <div style="float:left;margin:5px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap">
+                                                                                    <%= movie.title %>
+                                                                                </div>
+                                                                                <div style="margin:5px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;text-align:right">
+                                                                                    <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %> <% if (movie.translate) { %><%- movie.translate %><% } %>
+                                                                                    <% } %>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                </a>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
                                                     <% }); } %>
-                                                    <style>.sh6:hover{opacity:.8;cursor:pointer}</style>
+                                                    <style>.sh6:hover {
+                                                            opacity: .8;
+                                                            cursor: pointer
+                                                        }</style>
 
                                                     <% if (moreEpisodes) { %>
                                                         <div style="clear:both;height:10px"></div>
-                                                        <div class="moreEpisodes" onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
+                                                        <div class="moreEpisodes"
+                                                             onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
                                                     <% } %>
 
                                                 <% }); } } } %>
 
                                                 <% if (typeof index === 'object') {
                                                         for (var type in index) {
-                                                if (index.hasOwnProperty(type) && index[type].length  && type !== 'episode') {
+                                                if (index.hasOwnProperty(type) && index[type].length && type !== 'episode') {
                                                 index[type].forEach(function (category) { %>
 
                                                     <div class="bl_seo_txt_h" style="float: left; width: 100%;">
@@ -111,8 +122,10 @@
                                                             <h2>
                                                                 <%- category.name %>
                                                                 <div class="randomMovieIndex">
-                                                                    <div <% if (!category.url) { %>style="display:none"<% } %> class="cinemapress-random-index"
-                                                                         onclick="window.location.href='<%- (category.url && category.url.indexOf('?')+1 ? category.url + '&random=' : category.url + '?random=') %><%- Math.random() %>'"
+                                                                    <div <% if (!category.url) { %>style="display:none"
+                                                                            <% } %>
+                                                                         class="cinemapress-random-index"
+                                                                         onclick="window.location.href='<%- (category.url && category.url.indexOf('?') + 1 ? category.url + '&random=' : category.url + '?random=') %><%- Math.random() %>'"
                                                                          title="<%= page.l.random %>">
                                                                         <img src="/themes/<%- page.theme %>/public/images/dice.svg">
                                                                     </div>
@@ -131,7 +144,10 @@
                                                                         <div class="sh18"><%- movie.year %></div>
                                                                     </div>
                                                                     <div class="sh3">
-                                                                        <a href="<%- movie.url %>"><%= movie.title %> <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% } %></a>
+                                                                        <a href="<%- movie.url %>"><%= movie.title %>
+                                                                            <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %>
+                                                                            <% } %>
+                                                                        </a>
                                                                     </div>
 
                                                                     <div class="favboxsh"></div>
@@ -141,7 +157,8 @@
                                                                 <div class="sh4">
                                                                     <div class="sh5">
                                                                         <div class="sh6">
-                                                                            <div class="sh9"><%- page.l.premiere %>: <%- movie.premiere %></div>
+                                                                            <div class="sh9"><%- page.l.premiere %>
+                                                                                : <%- movie.premiere %></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -151,7 +168,9 @@
                                                                     <div class="postershort">
                                                                         <a href="<%- movie.url %>">
                                                                             <div class="cinemapress-poster">
-                                                                                <img src="<%- movie.poster %>" alt="<%= movie.title %> (<%- movie.year %>)" title="<%= movie.title %> (<%- movie.year %>)">
+                                                                                <img src="<%- movie.poster %>"
+                                                                                     alt="<%= movie.title %> (<%- movie.year %>)"
+                                                                                     title="<%= movie.title %> (<%- movie.year %>)">
                                                                                 <% if (movie.quality) { %>
                                                                                     <div class="cinemapress-quality">
                                                                                         <span class="cinemapress-svg-quality"></span>
@@ -170,23 +189,31 @@
                                                                 </div>
                                                                 <ul class="shortinfo">
                                                                     <% if (movie.year_url) { %>
-                                                                        <li><strong><%- page.l.year %>:</strong> <%- movie.year_url %></li>
+                                                                        <li><strong><%- page.l.year %>
+                                                                                :</strong> <%- movie.year_url %></li>
                                                                     <% } %>
                                                                     <% if (movie.countries_url) { %>
-                                                                        <li><strong><%- page.l.countries %>:</strong> <%- movie.countries_url %></li>
+                                                                        <li><strong><%- page.l.countries %>
+                                                                                :</strong> <%- movie.countries_url %>
+                                                                        </li>
                                                                     <% } %>
                                                                     <% if (movie.genres_url) { %>
-                                                                        <li><strong><%- page.l.genres %>:</strong> <%- movie.genres_url %></li>
+                                                                        <li><strong><%- page.l.genres %>
+                                                                                :</strong> <%- movie.genres_url %></li>
                                                                     <% } %>
                                                                     <% if (movie.directors_url) { %>
-                                                                        <li><strong><%- page.l.directors %>:</strong> <%- movie.directors_url %></li>
+                                                                        <li><strong><%- page.l.directors %>
+                                                                                :</strong> <%- movie.directors_url %>
+                                                                        </li>
                                                                     <% } %>
                                                                     <% if (movie.actors_url) { %>
-                                                                        <li><strong><%- page.l.actors %>:</strong> <%- movie.actors_url %></li>
+                                                                        <li><strong><%- page.l.actors %>
+                                                                                :</strong> <%- movie.actors_url %></li>
                                                                     <% } %>
                                                                 </ul>
                                                                 <% if (movie.description_short) { %>
-                                                                    <div class="shortdisc" style="margin-top: 20px; text-align: justify;">
+                                                                    <div class="shortdisc"
+                                                                         style="margin-top: 20px; text-align: justify;">
                                                                         <div style="display:inline;">
                                                                             <%- movie.description_short %>...
                                                                         </div>
@@ -204,14 +231,15 @@
                                                             </span>
                                                                 </div>
                                                                 <div class="bf_fs_see">
-                                                                    <a href="<%- movie.url %>" rel="nofollow"><%- page.l.more %> ...</a>
+                                                                    <a href="<%- movie.url %>"
+                                                                       rel="nofollow"><%- page.l.more %> ...</a>
                                                                 </div>
                                                                 <div class="sh13">
                                                             <span class="item_first"><%- page.l.rating %> <%- page.l.kp %>:
-                                                                <span class="num"><%- movie.kp_rating/10 %></span>
+                                                                <span class="num"><%- movie.kp_rating / 10 %></span>
                                                             </span>
                                                                     <span class="item"><%- page.l.rating %> <%- page.l.imdb %>:
-                                                                <span class="num"><%- movie.imdb_rating/10 %></span>
+                                                                <span class="num"><%- movie.imdb_rating / 10 %></span>
                                                             </span>
                                                                 </div>
                                                             </div>
@@ -221,12 +249,14 @@
                                                 <% if (typeof page.pagination === 'object') { %>
                                                     <div class="pagination">
                                                         <% if (page.pagination.first) { %>
-                                                            <a href="<%- page.pagination.first.link %>" rel="nofollow"><%- page.pagination.first.number %></a>
+                                                            <a href="<%- page.pagination.first.link %>"
+                                                               rel="nofollow"><%- page.pagination.first.number %></a>
                                                             <span class="nav_ext">...</span>
                                                         <% } %>
                                                         <% if (page.pagination.prev.length) { %>
                                                             <% page.pagination.prev.forEach(function (prev) { %>
-                                                                <a href="<%- prev.link %>" rel="nofollow"><%- prev.number %></a>
+                                                                <a href="<%- prev.link %>"
+                                                                   rel="nofollow"><%- prev.number %></a>
                                                             <% }); %>
                                                             <span class="nav_ext">...</span>
                                                         <% } %>
@@ -234,12 +264,14 @@
                                                         <% if (page.pagination.next.length) { %>
                                                             <span class="nav_ext">...</span>
                                                             <% page.pagination.next.forEach(function (next) { %>
-                                                                <a href="<%- next.link %>" rel="nofollow"><%- next.number %></a>
+                                                                <a href="<%- next.link %>"
+                                                                   rel="nofollow"><%- next.number %></a>
                                                             <% }); %>
                                                         <% } %>
                                                         <% if (page.pagination.last) { %>
                                                             <span class="nav_ext">...</span>
-                                                            <a href="<%- page.pagination.last.link %>" rel="nofollow"><%- page.pagination.last.number %></a>
+                                                            <a href="<%- page.pagination.last.link %>"
+                                                               rel="nofollow"><%- page.pagination.last.number %></a>
                                                         <% } %>
                                                     </div>
                                                 <% } %>

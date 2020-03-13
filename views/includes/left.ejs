@@ -6,7 +6,7 @@
                 <li><a href="/"><%- page.l.home %></a></li>
                 <li class="sub new_films"><a rel="nofollow"><%- page.l.premieres %></a>
                     <ul class="sub_m">
-                        <% page.urls.years.slice(0,6).forEach(function(year) { %>
+                        <% page.urls.years.slice(0, 6).forEach(function(year) { %>
                             <li>
                                 <a href="<%- year.url %>">
                                     <%- page.l.movies %> <%- year.title %>
@@ -70,7 +70,8 @@
     <% news.forEach(function (content) { %>
         <div style="float: left; width: 100%;">
             <div style="margin: 0; padding: 10px 15px 10px 0">
-                <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url('<%- content.image %>');">
+                <a href="<%- content.url %>" class="cinemapress-news"
+                   style="background-image:url('<%- content.image %>');">
                     <div class="cinemapress-news-title">
                         <%= content.title %>
                     </div>
@@ -90,7 +91,7 @@
 <% } %>
 
 <% if (typeof recent === 'object' && recent.length) { %>
-    <% recent.slice(0, Math.ceil(recent.length/2)).forEach(function (comment) { %>
+    <% recent.slice(0, Math.ceil(recent.length / 2)).forEach(function (comment) { %>
         <div style="margin: 10px 10px 0 0;">
             <div class="cinemapress-comment">
                 <div class="cinemapress-comment-head">
@@ -104,11 +105,14 @@
                         <div class="cinemapress-comment-user" data-comment-id="<%- comment.id %>">
                             <div class="cinemapress-comment-user-name">
                                 <%- comment.user %>
-                            </div><div class="cinemapress-comment-user-said">
+                            </div>
+                            <div class="cinemapress-comment-user-said">
                                 <%- page.l.said %>
-                            </div><div class="cinemapress-comment-user-date">
+                            </div>
+                            <div class="cinemapress-comment-user-date">
                                 <%- comment.date %>
-                            </div><div class="cinemapress-comment-user-link">
+                            </div>
+                            <div class="cinemapress-comment-user-link">
                                 <a href="<%- comment.url %>#c<%- comment.id %>" title="<%= comment.title %>">#</a>
                             </div>
                         </div>

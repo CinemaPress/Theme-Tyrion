@@ -24,7 +24,7 @@
 <% } %>
 
 <% if (typeof recent === 'object' && recent.length) { %>
-    <% recent.slice(Math.ceil(recent.length/2), recent.length).forEach(function (comment) { %>
+    <% recent.slice(Math.ceil(recent.length / 2), recent.length).forEach(function (comment) { %>
         <div style="margin: 10px 0;">
             <div class="cinemapress-comment">
                 <div class="cinemapress-comment-head">
@@ -38,11 +38,14 @@
                         <div class="cinemapress-comment-user" data-comment-id="<%- comment.id %>">
                             <div class="cinemapress-comment-user-name">
                                 <%- comment.user %>
-                            </div><div class="cinemapress-comment-user-said">
+                            </div>
+                            <div class="cinemapress-comment-user-said">
                                 <%- page.l.said %>
-                            </div><div class="cinemapress-comment-user-date">
+                            </div>
+                            <div class="cinemapress-comment-user-date">
                                 <%- comment.date %>
-                            </div><div class="cinemapress-comment-user-link">
+                            </div>
+                            <div class="cinemapress-comment-user-link">
                                 <a href="<%- comment.url %>#c<%- comment.id %>" title="<%= comment.title %>">#</a>
                             </div>
                         </div>
