@@ -108,12 +108,7 @@
                     <ul>
                         <% slider.slice(0, 6).forEach(function (movie) { %>
                             <li>
-                                <a href="<%- movie.url %>">
-                                    <% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>
-                                    ... <%- movie.year %>
-                                    <% } else { %><%= movie.title %> <%- movie.year %>
-                                    <% } %>
-                                </a>
+                                <a href="<%- movie.url %>"><% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%= movie.title %> <%- movie.year %><% } %></a>
                             </li>
                         <% }); %>
                     </ul>
@@ -131,12 +126,7 @@
                     <ul class="bf_top_films_bl_li_2">
                         <% slider.slice(6, 12).forEach(function (movie) { %>
                             <li>
-                                <a href="<%- movie.url %>">
-                                    <% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>
-                                    ... <%- movie.year %>
-                                    <% } else { %><%= movie.title %> <%- movie.year %>
-                                    <% } %>
-                                </a>
+                                <a href="<%- movie.url %>"><% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%= movie.title %> <%- movie.year %><% } %></a>
                             </li>
                         <% }); %>
                     </ul>
@@ -156,12 +146,7 @@
                     <ul class="bf_top_films_bl_li_3">
                         <% slider.slice(12, 18).forEach(function (movie) { %>
                             <li>
-                                <a href="<%- movie.url %>">
-                                    <% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>
-                                    ... <%- movie.year %>
-                                    <% } else { %><%= movie.title %> <%- movie.year %>
-                                    <% } %>
-                                </a>
+                                <a href="<%- movie.url %>"><% if (movie.title.length >= 35) { %><%- movie.title.substr(0, 35).trim() %>... <%- movie.year %><% } else { %><%= movie.title %> <%- movie.year %><% } %></a>
                             </li>
                         <% }); %>
                     </ul>
