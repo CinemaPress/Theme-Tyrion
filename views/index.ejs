@@ -127,7 +127,7 @@
                                                                          class="cinemapress-random-index"
                                                                          onclick="window.location.href='<%- (category.url && category.url.indexOf('?') + 1 ? category.url + '&random=' : category.url + '?random=') %><%- Math.random() %>'"
                                                                          title="<%= page.l.random %>">
-                                                                        <img src="/themes/<%- page.theme %>/public/images/dice.svg">
+                                                                        <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%= page.l.random %>">
                                                                     </div>
                                                                 </div>
                                                             </h2>
@@ -157,8 +157,7 @@
                                                                 <div class="sh4">
                                                                     <div class="sh5">
                                                                         <div class="sh6">
-                                                                            <div class="sh9"><%- page.l.premiere %>
-                                                                                : <%- movie.premiere %></div>
+                                                                            <div class="sh9"><%- page.l.premiere %>: <%- movie.premiere %></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -189,26 +188,21 @@
                                                                 </div>
                                                                 <ul class="shortinfo">
                                                                     <% if (movie.year_url) { %>
-                                                                        <li><strong><%- page.l.year %>
-                                                                                :</strong> <%- movie.year_url %></li>
+                                                                        <li><strong><%- page.l.year %>:</strong> <%- movie.year_url %></li>
                                                                     <% } %>
                                                                     <% if (movie.countries_url) { %>
-                                                                        <li><strong><%- page.l.countries %>
-                                                                                :</strong> <%- movie.countries_url %>
+                                                                        <li><strong><%- page.l.countries %>:</strong> <%- movie.countries_url %>
                                                                         </li>
                                                                     <% } %>
                                                                     <% if (movie.genres_url) { %>
-                                                                        <li><strong><%- page.l.genres %>
-                                                                                :</strong> <%- movie.genres_url %></li>
+                                                                        <li><strong><%- page.l.genres %>:</strong> <%- movie.genres_url %></li>
                                                                     <% } %>
                                                                     <% if (movie.directors_url) { %>
-                                                                        <li><strong><%- page.l.directors %>
-                                                                                :</strong> <%- movie.directors_url %>
+                                                                        <li><strong><%- page.l.directors %>:</strong> <%- movie.directors_url %>
                                                                         </li>
                                                                     <% } %>
                                                                     <% if (movie.actors_url) { %>
-                                                                        <li><strong><%- page.l.actors %>
-                                                                                :</strong> <%- movie.actors_url %></li>
+                                                                        <li><strong><%- page.l.actors %>:</strong> <%- movie.actors_url %></li>
                                                                     <% } %>
                                                                 </ul>
                                                                 <% if (movie.description_short) { %>

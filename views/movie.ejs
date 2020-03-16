@@ -82,8 +82,7 @@
                                                         <div class="sh4">
                                                             <div class="sh5">
                                                                 <div class="sh6">
-                                                                    <div class="sh9"><%- page.l.premiere %>
-                                                                        : <%- movie.premiere %></div>
+                                                                    <div class="sh9"><%- page.l.premiere %>: <%- movie.premiere %></div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -104,46 +103,35 @@
 
                                                         <ul class="fullinfo">
                                                             <% if (movie.year_url) { %>
-                                                                <li><strong><%- page.l.year %>
-                                                                        :</strong> <%- movie.year_url %></li>
+                                                                <li><strong><%- page.l.year %>:</strong> <%- movie.year_url %></li>
                                                             <% } %>
                                                             <% if (movie.countries_url) { %>
-                                                                <li class="bg"><strong><%- page.l.countries %>
-                                                                        :</strong> <%- movie.countries_url %></li>
+                                                                <li class="bg"><strong><%- page.l.countries %>:</strong> <%- movie.countries_url %></li>
                                                             <% } %>
                                                             <% if (movie.genres_url) { %>
-                                                                <li><strong><%- page.l.genres %>
-                                                                        :</strong> <%- movie.genres_url %></li>
+                                                                <li><strong><%- page.l.genres %>:</strong> <%- movie.genres_url %></li>
 
                                                             <% } %>
                                                             <% if (movie.directors_url) { %>
-                                                                <li class="bg"><strong><%- page.l.directors %>
-                                                                        :</strong> <%- movie.directors_url %></li>
+                                                                <li class="bg"><strong><%- page.l.directors %>:</strong> <%- movie.directors_url %></li>
                                                             <% } %>
                                                             <% if (movie.kp_rating) { %>
-                                                                <li><strong><%- page.l.kp %>
-                                                                        :</strong> <%- movie.kp_rating / 10 %>
-                                                                    (<%- movie.kp_vote %>)
+                                                                <li><strong><%- page.l.kp %>:</strong> <%- movie.kp_rating / 10 %> (<%- movie.kp_vote %>)
                                                                 </li>
                                                             <% } %>
                                                             <% if (movie.imdb_rating) { %>
                                                                 <li class="bg">
-                                                                    <strong><%- page.l.rating %> <%- page.l.imdb %>
-                                                                        :</strong> <%- movie.imdb_rating / 10 %>
-                                                                    (<%- movie.imdb_vote %>)
+                                                                    <strong><%- page.l.rating %> <%- page.l.imdb %>:</strong> <%- movie.imdb_rating / 10 %>(<%- movie.imdb_vote %>)
                                                                 </li>
                                                             <% } %>
                                                             <% if (movie.quality) { %>
-                                                                <li><strong><%- page.l.quality %>
-                                                                        :</strong> <%- movie.quality %></li>
+                                                                <li><strong><%- page.l.quality %>:</strong> <%- movie.quality %></li>
                                                             <% } %>
                                                             <% if (movie.translate) { %>
-                                                                <li class="bg"><strong><%- page.l.translate %>
-                                                                        :</strong> <%- movie.translate %></li>
+                                                                <li class="bg"><strong><%- page.l.translate %>:</strong> <%- movie.translate %></li>
                                                             <% } %>
                                                             <% if (movie.tags_url) { %>
-                                                                <li><strong><%- page.l.tags %>
-                                                                        :</strong> <%- movie.tags_url %></li>
+                                                                <li><strong><%- page.l.tags %>:</strong> <%- movie.tags_url %></li>
                                                             <% } %>
                                                         </ul>
 
@@ -325,7 +313,7 @@
                                                             <div class="cinemapress-random-related"
                                                                  onclick="window.location.href='<%- (category.url && category.url.indexOf('?') + 1 ? category.url + '&random=' : category.url + '?random=') %><%- Math.random() %>'"
                                                                  title="<%= page.l.random %>">
-                                                                <img src="/themes/<%- page.theme %>/public/images/dice.svg">
+                                                                <img src="/themes/<%- page.theme %>/public/images/dice.svg" alt="<%= page.l.random %>">
                                                             </div>
                                                         </div>
                                                     </div>
