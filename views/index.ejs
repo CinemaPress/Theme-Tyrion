@@ -71,7 +71,7 @@
                                                     </div>
 
                                                     <% var moreEpisodes = false; %>
-                                                    <% if (category.movies.length) {
+                                                    <% if (typeof category === 'object' && category.movies && category.movies.length) {
                                                     category.movies.forEach(function (movie) { %>
                                                         <div class="sh0"
                                                              <% if (movie.hide) { moreEpisodes = true; %>style="display:none;width:100%;border:0;padding:0;margin:0"
@@ -134,7 +134,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <% if (category.movies.length) {
+                                                    <% if (typeof category === 'object' && category.movies && category.movies.length) {
                                                     category.movies.forEach(function (movie) { %>
 
                                                         <div class="sh0">
