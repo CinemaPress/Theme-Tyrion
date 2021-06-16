@@ -1,10 +1,10 @@
 # Theme «tyrion»
 
-![Theme «tyrion» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Tyrion/master/screenshot.png "Theme «tyrion» for CinemaPress")
+![Theme «tyrion» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Tyrion/master/screenshot.png)
 
 :art: Theme «tyrion» for CinemaPress
 
-- [Tyrion.CinemaPress.io](http://Tyrion.CinemaPress.io/)
+- `«tyrion»`
 
 ## How to install?
 1. Download [GitHub](https://github.com/CinemaPress/Theme-Tyrion/archive/master.zip) or [GitLab](https://gitlab.com/CinemaPress/Theme-Tyrion/repository/archive.zip) or [BitBucket](https://bitbucket.org/cinemapress/theme-tyrion/get/master.zip)
